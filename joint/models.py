@@ -1,0 +1,58 @@
+from transformers import BertModel, BertPreTrainedModel
+import torch.nn as nn
+
+
+class JointIntentSlot(BertPreTrainedModel):
+    def __init__(self, config, num_intent_labels, num_slot_labels):
+        super().__init__(config)
+
+        # store params
+        classifier_dropout = config.classifier_dropout if config.classifier_dropout else config.hidden_dropout_prob
+        self.num_intent_labels = num_intent_labels
+        self.num_slot_labels = num_slot_labels
+        self.config = config
+
+        # define layers
+        self.bert = BertModel(config)
+        self.dropout = nn.Dropout(classifier_dropout)
+        self.intent_classifier = nn.Linear(config.hidden_size, num_intent_labels) 
+        self.slot_classifier = nn.Linear(config.hidden_size, num_slot_labels) 
+
+        # Initialize weights and apply final processing
+        self.post_init()
+
+    def forward(self, input_ids=None, attention_mask=None, token_type_ids=None,
+                position_ids=None, head_mask=None, inputs_embeds=None,
+                intent_label_ids=None, slot_label_ids=None, output_attentions=None, output_hidden_states=None):
+
+        outputs = self.bert(
+            input_ids=input_ids, attention_mask=attention_mask,
+            token_type_ids=token_type_ids, position_ids=position_ids,
+            head_mask=head_mask, inputs_embeds=inputs_embeds, output_attentions=output_attentions,
+            output_hidden_states=output_hidden_states
+        )
+
+        sequence_output = outputs[0]    # [Seq states]
+        pooled_output = outputs[1]      # [CLS]
+
+        pooled_output = self.dropout(pooled_output)
+        sequence_output = self.dropout(sequence_output)
+        intent_logits = self.intent_classifier(pooled_output)
+        slot_logits = self.slot_classifier(sequence_output)
+
+        total_loss = 0
+        # 1. Intent Softmax
+        if intent_label_ids is not None:
+            intent_loss_fct = nn.CrossEntropyLoss()
+            intent_loss = intent_loss_fct(intent_logits.view(-1, self.num_intent_labels), intent_label_ids.view(-1))
+            total_loss += intent_loss
+
+        # 2. Slot Softmax
+        if slot_label_ids is not None:
+            loss_fct = nn.CrossEntropyLoss()
+            slot_loss = loss_fct(slot_logits.view(-1, self.num_slot_labels), slot_label_ids.view(-1))
+            total_loss += slot_loss
+
+        outputs = ((intent_logits, slot_logits),) + outputs[2:]
+        outputs = (total_loss,) + outputs  # (loss), ((intent logits)), (hidden_states), (attentions)
+        return outputs
