@@ -185,7 +185,7 @@ def evalFun(path, args, lang):
 
     print(f"\n{time.strftime('%c', time.localtime(time.time()))}")
     res = compute_metrics(pred_intent_ids, intent_label_ids)
-    with open(f"{LANG}.json","w",encoding='utf-8') as f:
+    with open(f"results/{LANG}.json","w",encoding='utf-8') as f:
         json.dump(res, f)
     for k, v in res.items():
         print(f'{k:<20}: {v}')
