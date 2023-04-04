@@ -50,13 +50,13 @@ def main(args):
     intent_idx2word = {v: k for v, k in enumerate(intent_labels)}
 
     # Load Tokenizer & Model
-    tokenizer = BertTokenizer.from_pretrained("bert-base-cased")
+    tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
-    model_config = BertConfig.from_pretrained("bert-base-cased", num_labels=len(
+    model_config = BertConfig.from_pretrained("bert-base-uncased", num_labels=len(
         intent_idx2word), problem_type="single_label_classification", id2label=intent_idx2word, label2id=intent_word2idx)
 
     model = IntentClassification.from_pretrained(
-        "bert-base-cased", config=model_config, num_intent_labels=len(intent_labels))
+        "bert-base-uncased", config=model_config, num_intent_labels=len(intent_labels))
     model.to('cuda')
 
     # Tokenize Datasets
@@ -131,9 +131,9 @@ def evalFun(path, args):
     intent_idx2word = {v: k for v, k in enumerate(intent_labels)}
 
     # Load Tokenizer & Model
-    tokenizer = BertTokenizer.from_pretrained("bert-base-cased")
+    tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
-    model_config = BertConfig.from_pretrained("bert-base-cased", num_labels=len(
+    model_config = BertConfig.from_pretrained("bert-base-uncased", num_labels=len(
         intent_idx2word), problem_type="intent_classification", id2label=intent_idx2word, label2id=intent_word2idx)
 
     model = IntentClassification.from_pretrained(path, num_intent_labels=len(intent_labels))

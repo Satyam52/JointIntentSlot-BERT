@@ -49,12 +49,12 @@ def main(args):
     slot_idx2word = {v: k for v, k in enumerate(slot_labels)}
 
     # Load Tokenizer & Model
-    tokenizer = BertTokenizer.from_pretrained("bert-base-cased")
+    tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
-    model_config = BertConfig.from_pretrained("bert-base-cased", problem_type="single_label_classification")
+    model_config = BertConfig.from_pretrained("bert-base-uncased", problem_type="single_label_classification")
 
     model = SlotClassifier.from_pretrained(
-        "bert-base-cased", config=model_config, num_slot_labels=len(slot_labels))
+        "bert-base-uncased", config=model_config, num_slot_labels=len(slot_labels))
     model.to('cuda')
 
     # Tokenize Datasets
@@ -129,9 +129,9 @@ def evalFun(path, args):
     slot_idx2word = {v: k for v, k in enumerate(slot_labels)}
 
     # Load Tokenizer & Model
-    tokenizer = BertTokenizer.from_pretrained("bert-base-cased")
+    tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
-    model_config = BertConfig.from_pretrained("bert-base-cased", problem_type="single_label_classification")
+    model_config = BertConfig.from_pretrained("bert-base-uncased", problem_type="single_label_classification")
 
     model = SlotClassifier.from_pretrained(path, num_slot_labels=len(slot_labels))
 

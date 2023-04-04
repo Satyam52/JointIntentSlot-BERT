@@ -1,0 +1,909 @@
+Text,Domain,Predicted domain,Intent,Predicted intent,Slots,Predicted slots
+and the darkness has fallen,iot,iot,iot_hue_lighton,iot_hue_lightoff,O O O O O,O O O O O
+it's dirty here make some noise,iot,play,iot_cleaning,play_game,O O O O O O,O O O O O O
+i want the status on my screen brightness,general,iot,general_quirky,iot_hue_lightchange,O O O O O O O O,O O O O O O O O
+what's up olly,general,general,general_greet,general_quirky,O O O,O O O
+olly tell me the time in g. m. t. plus five,datetime,datetime,datetime_convert,datetime_convert,O O O O O O B-time_zone I-time_zone I-time_zone I-time_zone I-time_zone,O O O O O O B-time_zone I-time_zone I-time_zone I-time_zone B-time_zone
+what's the week's forecast,weather,weather,weather_query,weather_query,O O B-time O,O O B-date O
+send a giggle my way,general,general,general_joke,general_quirky,O O O O O,O O O O O
+play it again please,play,play,play_music,play_audiobook,O O O O,O O O O
+play music from my rock list,play,play,play_music,play_music,O O O O B-playlist_name I-playlist_name,O O O O B-music_genre O
+i feel like jazz right now how about you,play,music,play_music,play_music,O O O B-music_genre O O O O O,O O O B-music_genre O O O O O
+what is the exchange rate of us dollar to pound sterling,news,qa,news_query,qa_currency,O O O B-news_topic I-news_topic I-news_topic I-news_topic I-news_topic I-news_topic I-news_topic I-news_topic,O O O O O O B-currency_name I-currency_name O B-currency_name I-currency_name
+light up the lights in the kitchen,iot,iot,iot_hue_lighton,iot_hue_lightup,O O O O O O B-house_place,O O O O O O B-house_place
+play a nirvana playlist,play,play,play_music,play_music,O O B-playlist_name I-playlist_name,O O B-artist_name O
+what day is new year's eve this year,datetime,datetime,datetime_query,datetime_query,O O O O O O B-date I-date,O O O B-event_name I-event_name I-event_name B-date I-date
+tell me the weather in barcelona in two days from now,weather,weather,weather_query,weather_query,O O O O O B-place_name O B-time I-time I-time I-time,O O O O O B-place_name O B-date I-date O O
+enable my plug,iot,iot,iot_wemo_on,iot_wemo_on,O O B-device_type,O O O
+seven years,play,general,play_music,general_quirky,B-song_name I-song_name,O O
+what's sensational in time of india,news,news,news_query,news_query,O O O B-media_type I-media_type I-media_type,O O O O O B-place_name
+start playing,play,play,play_music,play_audiobook,O O,O O
+power up the plug socket one,iot,iot,iot_wemo_on,iot_wemo_on,O O O B-device_type I-device_type I-device_type,O O O B-device_type I-device_type O
+get me the latest stock price for costco,news,qa,news_query,qa_stock,O O O O B-news_topic I-news_topic I-news_topic I-news_topic,O O O O O O O B-business_name
+play the weekend,play,play,play_music,play_radio,O O B-song_name,O O B-date
+by get marks,weather,qa,weather_query,lists_remove,O O O,O O O
+prepare the order as soon as possible,takeaway,takeaway,takeaway_query,takeaway_order,O O O O O O O,O O O O O O O
+please ring the wake up alarm at eight am next saturday,alarm,alarm,alarm_set,alarm_set,O O O B-alarm_type I-alarm_type O O B-time I-time O B-date,O O O B-timeofday I-time O O B-time I-time O B-date
+please play the radio gaga song,play,play,play_music,play_music,O O O O B-artist_name O,O O O B-artist_name I-artist_name O
+set notification for news about the dakota pipeline,news,news,news_query,news_query,O O O O O O B-news_topic I-news_topic,O O O O O B-news_topic B-news_topic I-news_topic
+keep me informed about bitcoin price,news,qa,news_query,qa_stock,O O O O B-news_topic I-news_topic,O O O O O O
+summarize week's weather details,weather,weather,weather_query,weather_query,O B-time O O,O B-date O O
+could you please give me up to date news headlines from my newest provider,news,news,news_query,news_query,O O O O O O O O O O O O B-media_type I-media_type,O O O O O O O O O O O O O O
+play love songs,play,play,play_music,play_music,O B-song_name I-song_name,O B-music_genre O
+what are the b. b. c. poll predictions for the upcoming us elections,news,news,news_query,news_query,O O O B-media_type I-media_type I-media_type I-media_type O O O B-news_topic I-news_topic I-news_topic,O O O B-media_type I-media_type I-media_type O O O O O B-place_name I-news_topic
+play some christian music,play,play,play_music,play_music,O O B-music_descriptor O,O O B-music_genre O
+open the folder app please,takeaway,lists,takeaway_order,lists_query,O O O O O,O O O O O
+i need a good cry can you play me sad rock songs,play,play,play_music,play_music,O O O O O O O O O B-music_descriptor B-music_genre O,O O O O O O O O O B-music_genre B-music_genre O
+get hourly notification on sports news,news,news,news_query,news_query,O B-general_frequency O O B-news_topic O,O O O O B-news_topic O
+where is volume setting,audio,music,audio_volume_other,music_query,O O O O,O O O O
+please turn up the screen brightness all the way,iot,iot,iot_hue_lightup,iot_hue_lightup,O O O O B-device_type O B-change_amount I-change_amount I-change_amount,O O O O O O O O O
+do not play rock metal,music,music,music_dislikeness,music_settings,O O O B-music_genre I-music_genre,O O O B-music_genre I-music_genre
+coordinate all pop song genres,play,music,play_music,music_query,O O B-music_genre O O,O O B-music_genre O O
+is there any special in politic,news,general,news_query,general_quirky,O O O O O B-news_topic,O O O O O B-news_topic
+get sia's cheap thrills ready to play next,play,play,play_music,play_music,O B-artist_name B-song_name I-song_name O O O O,O B-artist_name B-artist_name I-artist_name O O O O
+how cold will it get each night this week,weather,weather,weather_query,weather_query,O B-weather_descriptor O O O B-general_frequency I-general_frequency B-date I-date,O B-weather_descriptor O O O B-date I-date B-date I-date
+who sings the song about a long black train,music,music,music_query,music_query,O O O O O O B-song_name I-song_name I-song_name,O O O O O O O O O
+if it's sunrise in stockholm what time is it in okinawa,datetime,datetime,datetime_convert,datetime_convert,O O B-time O B-place_name O O O O O B-place_name,O O O O B-place_name O O O O O B-place_name
+pandora,play,music,play_music,music_likeness,O,B-media_type
+i need to know if mr. pizza delivers,takeaway,takeaway,takeaway_query,takeaway_query,O O O O O B-business_name I-business_name B-order_type,O O O O O B-business_name I-business_name O
+fast,audio,transport,audio_volume_up,transport_traffic,O,O
+tell me about the new foreign policy of trump,news,news,news_query,news_query,O O O O O B-news_topic I-news_topic I-news_topic I-news_topic,O O O O O B-news_topic I-news_topic O B-person
+i like the songs of yeshudas please play it,music,play,music_likeness,play_music,O O O O O B-artist_name O O O,O O O O O B-artist_name O O O
+what do we have on new york time's front page,news,news,news_query,news_query,O O O O O B-media_type I-media_type I-media_type O O,O O O O O B-media_type I-media_type I-media_type O I-media_type
+please turn off the light of my son's room,iot,iot,iot_hue_lightoff,iot_hue_lightoff,O O O O O O B-house_place I-house_place I-house_place,O O O O O O O B-relation B-house_place
+tell me about trump,news,qa,news_query,qa_factoid,O O O B-news_topic,O O O B-person
+let me know when you hear about france,news,general,news_query,general_quirky,O O O O O O O B-news_topic,O O O O O O O B-place_name
+play the latest rock songs having rating of four or above,play,play,play_music,play_music,O O O B-music_genre O O B-music_descriptor I-music_descriptor I-music_descriptor I-music_descriptor I-music_descriptor,O O O B-music_genre O O O O O O O
+when is easter in the year two thousand and eighteen,datetime,datetime,datetime_query,datetime_query,O O B-event_name O O O B-date I-date I-date I-date,O O B-event_name O O B-date I-date I-date I-date I-date
+do not make any noise until morning alarm,audio,alarm,audio_volume_mute,alarm_remove,O O O O O O B-timeofday O,O O O O O O I-time O
+order a pizza with sausage from domino's,takeaway,takeaway,takeaway_order,takeaway_order,O O B-food_type O B-ingredient O B-business_name,O O B-food_type I-food_type B-food_type O B-business_name
+the sun is shinning bright will we have this weather for the rest of the day,weather,weather,weather_query,weather_query,O O O O O O O O O O O O B-time I-time I-time I-time,O B-weather_descriptor O O O O O O O O O O B-time I-time I-time I-time
+play my summer jams playlist,play,play,play_music,play_music,O O B-playlist_name I-playlist_name I-playlist_name,O O B-artist_name I-artist_name O
+find me a joke related to baseball,general,general,general_joke,general_joke,O O O O O O B-joke_type,O O O O O O B-news_topic
+set notification from world news,news,news,news_query,news_query,O O O B-media_type I-media_type,O O O B-place_name O
+so clean news in past six hours is what,news,news,news_query,news_query,B-media_type I-media_type O O B-time I-time I-time O O,O O O O B-time I-time I-time O O
+play only all music released between the year one thousand nine hundred and ninety and two thousand,play,play,play_music,play_music,O O O O O O O O B-date I-date I-date I-date I-date I-date O B-date I-date,O O O O O O O I-date I-date I-date I-date I-date I-date I-date I-date I-date I-date
+find some smooth jazz for me,play,play,play_music,play_music,O O B-music_genre I-music_genre O O,O O B-music_genre B-music_genre O O
+my vacuum cleaner should start between ten to eleven am everyday,iot,iot,iot_cleaning,iot_cleaning,O B-device_type I-device_type O O O B-time O B-time I-time B-general_frequency,O B-device_type I-device_type O O O B-time I-time I-time I-time B-general_frequency
+change the music mode to rock,music,play,music_settings,play_music,B-player_setting O O O O B-music_genre,O O O O O B-music_genre
+what is the minimum temperature of london,weather,weather,weather_query,weather_query,O O O O B-weather_descriptor O B-place_name,O O O B-weather_descriptor B-weather_descriptor O B-place_name
+what do you think,music,general,music_likeness,general_quirky,O O O O,O O O O
+turn off all lights,iot,iot,iot_hue_lightoff,iot_hue_lightoff,O O B-device_type I-device_type,O O O O
+give me news on president trump,news,news,news_query,news_query,O O O O B-news_topic I-news_topic,O O O O B-news_topic I-person
+which teams are playing today in the premier league,news,recommendation,news_query,qa_factoid,O O O O B-date O O B-news_topic I-news_topic,O O O O B-date O O O O
+song title,music,music,music_query,music_likeness,O O,O O
+title,music,play,music_query,play_audiobook,O,O
+please make me coffee without sweetener,iot,iot,iot_coffee,iot_coffee,O O O O B-coffee_type I-coffee_type,O O O O O O
+play coldplay album,play,play,play_music,play_music,O B-playlist_name O,O B-artist_name O
+can you loop the playlist themes,play,play,play_music,play_music,O O O O O B-playlist_name,O O O O O O
+add song to running list,music,lists,music_likeness,lists_createoradd,O O O B-playlist_name O,O O O O O
+get me match highlights,news,news,news_query,news_query,O O B-news_topic I-news_topic,O O O O
+will there be a fall in temperature by tonight,weather,weather,weather_query,weather_query,O O O O O O B-weather_descriptor O B-timeofday,O O O O B-weather_descriptor O B-weather_descriptor O B-timeofday
+hi google play me playlist wacky in my gaana application,play,play,play_music,play_music,O O O O O B-playlist_name O O O O,O O O O O B-song_name O O B-music_genre O
+can you open my itunes,play,play,play_music,play_music,O O O O O,O O O O B-media_type
+please play thirteen,play,play,play_music,play_music,O O B-song_name,O O B-music_genre
+i never want to hear that song again,music,music,music_dislikeness,music_likeness,O O O O O O O O,O O O O O O O O
+what's the date of the winter solstice two years from now,datetime,datetime,datetime_query,datetime_query,O O O O O B-event_name I-event_name B-time I-time O O,O O O O O B-event_name I-event_name B-date I-date I-date I-date
+i'm going to sleep now,iot,iot,iot_hue_lightoff,general_quirky,O O O O O,O O O O O
+when can we eat,takeaway,cooking,takeaway_query,cooking_recipe,O O O O,O O O O
+is dinner ready yet,takeaway,calendar,takeaway_query,calendar_query,O B-meal_type O O,O B-meal_type O O
+what is the current weather condition in my place,weather,weather,weather_query,weather_query,O O O O O O O B-place_name I-place_name,O O O O O O O O O
+b. b. c. world headlines,news,news,news_query,news_query,B-media_type I-media_type I-media_type I-media_type O,B-media_type I-media_type I-media_type B-place_name O
+silently adjust,audio,audio,audio_volume_mute,audio_volume_up,O O,O O
+wooo,general,alarm,general_quirky,alarm_query,O,O
+play ella fitzgerals get happy,play,play,play_music,play_music,O B-artist_name I-artist_name B-song_name I-song_name,O B-song_name I-song_name I-song_name I-song_name
+can i order take out from licari's,takeaway,takeaway,takeaway_order,takeaway_order,O O O B-order_type I-order_type O B-business_name,O O O B-order_type O O B-business_name
+show me the dim color,iot,iot,iot_hue_lightdim,iot_hue_lightchange,O O O O O,O O O O O
+light color for study room,iot,iot,iot_hue_lightup,iot_hue_lightchange,O O O B-house_place I-house_place,O O O B-house_place I-house_place
+i need to change my house lights color to blue,iot,iot,iot_hue_lightchange,iot_hue_lightchange,O O O O O B-house_place O O O B-color_type,O O O O O O O O O B-color_type
+keep me up to date with today's n. b. a. scores,news,news,news_query,news_query,O O O O O O B-date B-news_topic I-news_topic I-news_topic I-news_topic,O O O O O O B-date B-news_topic I-media_type I-media_type O
+what is the weather this friday,weather,weather,weather_query,weather_query,O O O O O B-date,O O O O B-date B-date
+what song is on the radio,music,play,music_query,play_radio,O O O O O O,O O O O O O
+please give me todays forecast for new york city,weather,weather,weather_query,weather_query,O O O B-date O O B-place_name I-place_name I-place_name,O O O B-date O O B-place_name I-place_name O
+i feel like having soup for lunch order from wangs kitchen restaurant a chicken manchow soup,takeaway,takeaway,takeaway_order,takeaway_order,O O O O B-food_type O B-meal_type O O B-business_name I-business_name B-business_type O O O O,O O O O O O B-meal_type O O B-business_name I-business_name I-business_name O B-food_type I-food_type I-food_type
+seven hundred,datetime,datetime,datetime_convert,datetime_query,O O,O O
+play my spotify dance play list,play,play,play_music,play_music,O O O O O O,O O B-app_name B-music_genre O O
+could you please create a pandora channel for adele,music,play,music_settings,play_music,O O O O O O O O B-artist_name,O O O O O O O O B-artist_name
+will the temperature stay about the same or is it going to get colder,weather,weather,weather_query,weather_query,O O B-weather_descriptor O O O O O O O O O O O,O O B-weather_descriptor O O O O O O O O O O B-weather_descriptor
+turn off the socket,iot,iot,iot_wemo_off,iot_wemo_off,O O O B-device_type,O O O O
+let's hear some indie rock okay,play,play,play_music,play_music,O O O B-music_genre I-music_genre O,O O O B-music_genre B-music_genre O
+olly i feel like dancing play me some rock north roll,play,play,play_music,play_music,O O O O O O O O B-music_genre I-music_genre I-music_genre,O O O O O O O O B-music_genre I-song_name I-song_name
+olly i need to hear some sad songs today,play,play,play_music,play_music,O O O O O O B-music_genre I-music_genre B-date,O O O O O O B-music_genre O B-date
+i want to hear purple haze,play,play,play_music,play_music,O O O O B-song_name I-song_name,O O O O B-artist_name I-artist_name
+should i bring an umbrella today,weather,weather,weather_query,weather_query,O O O O O B-date,O O O O B-weather_descriptor B-date
+are there any upcoming concerts by,music,recommendation,music_likeness,recommendation_events,O O O O B-event_name O,O O O O B-event_name O
+please play some jazz music,play,play,play_music,play_music,O O O B-music_genre I-music_genre,O O O B-music_genre O
+the second of next mont lands on what day,datetime,datetime,datetime_query,datetime_query,O B-event_name I-event_name I-event_name I-event_name I-event_name O O O,O O O O O O O O O
+is there takeaway at papa john's,takeaway,takeaway,takeaway_query,takeaway_query,O O O O B-business_name I-business_name,O O B-order_type O B-business_name I-business_name
+please show me any articles related to weather in the morning news,news,news,news_query,news_query,O O O O O O O B-news_topic O O B-media_type I-media_type,O O O O O O O B-news_topic O O B-media_type O
+brightness ninety percent,iot,iot,iot_hue_lightchange,iot_hue_lightchange,O B-change_amount I-change_amount,O O I-change_amount
+weekly weather report,weather,weather,weather_query,weather_query,O O O,B-date O O
+please tell me news related to the stock market,qa,qa,qa_stock,qa_stock,O O O O O O O B-news_topic I-news_topic,O O O O O O O O I-news_topic
+play songs by the band the beatles,play,play,play_music,play_music,O O O O O O B-artist_name,O O O O O B-artist_name B-artist_name
+does louie's do take out,takeaway,takeaway,takeaway_query,takeaway_query,O B-business_name O O O,O B-business_name O B-order_type B-order_type
+take out available louies,takeaway,takeaway,takeaway_query,takeaway_order,O O O B-business_name,O O O B-business_name
+i hate this song,music,music,music_dislikeness,music_likeness,O O O O,O O O O
+show me some current events,news,calendar,news_query,calendar_query,O O O O O,O O O O O
+don't play this song again,music,music,music_dislikeness,music_settings,O O O O O,O O O O O
+play something from keane's hopes and fears album,play,play,play_music,play_music,O O O B-artist_name O O O O,O O O B-artist_name B-song_name I-song_name I-song_name O
+how many tornadoes have there been this month,general,general,general_quirky,general_quirky,O O B-news_topic O O O B-date I-date,O O O O O O B-date I-date
+olly how many tornadoes have there been this month,general,general,general_quirky,general_quirky,O O O B-news_topic O O O B-date I-date,O O O O O O O B-date I-date
+make me a cup of coffee with salted carmel flavored cream,iot,iot,iot_coffee,iot_coffee,O O O O O O O B-coffee_type I-coffee_type I-coffee_type I-coffee_type,O O O O O O O B-food_type I-food_type O I-food_type
+stop start the juice,iot,audio,iot_wemo_on,audio_volume_mute,O O O O,O O O O
+rate five,music,qa,music_likeness,qa_currency,O O,O O
+please note i like jazz and hate disco,music,music,music_likeness,music_likeness,O O O O B-music_genre O O B-place_name,O O O O B-music_genre O O B-music_genre
+what is the current state of the investigation into trump's ties with russia,news,news,news_query,news_query,O O O O O O O B-news_topic I-news_topic I-news_topic I-news_topic O B-place_name,O O O O O O O O O B-news_topic I-news_topic I-news_topic B-news_topic
+should we expect rain this afternoon,weather,weather,weather_query,weather_query,O O O O O B-timeofday,O O O B-weather_descriptor B-timeofday I-timeofday
+does the nearby dominoes have delivery,takeaway,takeaway,takeaway_query,takeaway_query,O O O B-business_name O O,O O O B-business_name O B-order_type
+what is the forecast for the week,weather,weather,weather_query,weather_query,O O O O O O B-date,O O O O O O O
+report weather for thirty three thousand seven hundred and seventy four,weather,weather,weather_query,weather_query,O O O O O O O O O O O,O O O O I-date I-date I-date O O O O
+where is the car,audio,transport,audio_volume_up,transport_traffic,O O O O,O O O B-transport_type
+knock knock,general,alarm,general_joke,alarm_set,O O,O O
+turn down the lights to medium,iot,iot,iot_hue_lightoff,iot_hue_lightdim,O O O O O O,O O O O B-change_amount I-change_amount
+what is the ten day forecast,weather,weather,weather_query,weather_query,O O O B-date I-date O,O O O B-date I-time O
+are there any forecasts of rain or snow this week,weather,weather,weather_query,weather_query,O O O O O B-weather_descriptor I-weather_descriptor I-weather_descriptor B-date I-date,O O O O O B-weather_descriptor I-weather_descriptor B-weather_descriptor B-date I-date
+what degree is it outside,weather,weather,weather_query,weather_query,O B-weather_descriptor O O O,O O O O O
+is the twenty second on a wednesday,datetime,datetime,datetime_query,datetime_query,O O B-date I-date O O O,O O B-date I-date O O B-date
+speak softer please,audio,audio,audio_volume_down,audio_volume_up,O O O,O O O
+play only my list,play,play,play_music,lists_createoradd,O O O O,O O O O
+please turn on my balcony lights,iot,iot,iot_hue_lighton,iot_hue_lightup,O O O O B-house_place O,O O O O B-house_place O
+change the lights in the living room to green and red,iot,iot,iot_hue_lightchange,iot_hue_lightchange,O O O O O B-house_place I-house_place O B-color_type I-color_type I-color_type,O O O O O B-house_place I-house_place O B-color_type O B-color_type
+i want the light to be a little more red ish,iot,iot,iot_hue_lightchange,iot_hue_lightchange,O O O O O O O O O B-color_type I-color_type,O O O O O O O O O B-color_type O
+remind me after ten minutes,calendar,calendar,calendar_set,calendar_set,O O B-time I-time I-time,O O O B-time I-time
+what's the latest news from xinhua,news,news,news_query,news_query,O O O O O B-media_type,O O O O O B-place_name
+what is going on in the world today,news,news,news_query,news_query,O O O O O O O B-date,O O O O O O B-place_name B-date
+tell me the time in someplace,datetime,datetime,datetime_convert,datetime_query,O O O O O O,O O O O O B-place_name
+lights at percent,iot,iot,iot_hue_lightchange,iot_hue_lightup,O O O,O B-change_amount I-change_amount
+please play my nineties rap hits,play,play,play_music,play_music,O O O B-music_genre I-music_genre O,O O O B-music_genre B-music_genre O
+i would like to hear aretha franklin's call me after this song,play,play,play_music,play_music,O O O O O B-artist_name I-artist_name O O O O O,O O O O O B-artist_name I-artist_name B-song_name O O O O
+play my midnight love playlist,play,play,play_music,play_music,O O B-playlist_name I-playlist_name O,O O B-song_name I-song_name I-playlist_name
+find me info on cars,news,qa,news_query,qa_factoid,O O O O B-news_topic,O O O O O
+what is the wake up time for my alarm i have set for the flight this weekend,alarm,alarm,alarm_query,alarm_query,O O O B-alarm_type I-alarm_type O O O O O O O O O O B-date I-date,O O O O O O O O O O O O O O O B-date I-date
+read that back,play,lists,play_audiobook,lists_createoradd,O O O,O O O
+play me last year's hits,play,play,play_music,play_music,O O O O O,O O B-artist_name I-date O
+i want to hear any songs that got grammys this year,play,play,play_music,play_music,O O O O O O O O O O O,O O O O O O O O O B-date I-date
+i'd like to listen to hear a music of dance and country,play,play,play_music,play_music,O O O O O O O O O B-music_genre I-music_genre I-music_genre,O O O O O O O O O B-music_genre O B-music_genre
+this is a good tune please notate file accordingly,music,music,music_likeness,music_likeness,O O O O O O O O O,O O O O O O B-player_setting O O
+please play shape of you by said sheeran,play,play,play_music,play_music,O O B-song_name I-song_name I-song_name O B-artist_name I-artist_name,O O B-song_name I-song_name I-song_name O B-artist_name B-artist_name
+please select the first song in my itunes library,play,play,play_music,play_music,O O O O O O O B-playlist_name I-playlist_name,O O O O O O O O O
+can you make the lights go out,iot,iot,iot_hue_lightoff,iot_hue_lightup,O O O O O O O,O O O O O O O
+olly what day of the week is halloween,datetime,datetime,datetime_query,datetime_query,O O B-date I-date I-date I-date O B-event_name,O O O O O O O B-event_name
+what happened on the walking dead,news,news,news_query,news_query,O O O O B-news_topic I-news_topic,O O O B-news_topic B-news_topic I-news_topic
+let's suck out the dust,iot,iot,iot_cleaning,iot_hue_lightchange,O O O O O,O O O O O
+please power down,iot,audio,iot_wemo_off,audio_volume_mute,O O O,O O O
+i want to set an alarm when i'm driving home tomorrow to remember to stop at the store and get food,alarm,alarm,alarm_set,alarm_set,O O O O O O O O O O B-date O O O B-event_name I-event_name I-event_name I-event_name I-event_name I-event_name I-event_name,O O O O O O O O O O B-date O O O O O O O O O O
+turn off overhead light,iot,iot,iot_hue_lightoff,iot_hue_lightoff,O O O O,O O B-device_type O
+i want to know everything that breaks about the dam breaking in california,news,news,news_query,news_query,O O O O O O O O O O O O B-place_name,O O O O O O O O O B-news_topic I-news_topic I-news_topic B-place_name
+where can i get a shot of tequila and some to go mexican food,takeaway,recommendation,takeaway_query,recommendation_locations,O O O O O O O B-food_type O O O O B-food_type O,O O O O O O O O O O O O B-food_type O
+turn off my wifi,iot,iot,iot_wemo_off,iot_wemo_off,O O O O,O O O B-device_type
+change volume to thirty five percent,audio,audio,audio_volume_other,audio_volume_up,O O B-change_amount I-change_amount I-change_amount I-change_amount,O O B-change_amount I-change_amount I-change_amount I-change_amount
+change volume level to maximum,audio,audio,audio_volume_other,audio_volume_up,O O O B-change_amount I-change_amount,O O O B-change_amount I-change_amount
+is there any news about the presidency,news,news,news_query,news_query,O O O O O O B-news_topic,O O O O O B-news_topic B-news_topic
+current time new york,datetime,datetime,datetime_query,datetime_query,O B-time_zone B-place_name I-place_name,O O B-place_name I-place_name
+am i going to be able to mow the grass this evening,weather,weather,weather_query,weather_query,O O O O O O O B-weather_descriptor I-weather_descriptor I-weather_descriptor B-timeofday I-timeofday,O O O O O O O O O B-weather_descriptor B-timeofday B-timeofday
+tell me the funniest joke that was ever told,general,general,general_joke,general_joke,O O O B-joke_type O O O O O,O O O O O O O O O
+i would like to hear some good funny jokes,general,general,general_joke,general_joke,O O O O O O B-joke_type I-joke_type O,O O O O O O O B-joke_type O
+is it afternoon yet,datetime,weather,datetime_query,weather_query,O O O O,O O B-timeofday O
+what time is it on the east coast of the united states,datetime,datetime,datetime_query,datetime_query,O O O O O O B-time_zone I-time_zone O O B-place_name I-place_name,O O O O O O B-place_name I-place_name O I-place_name I-place_name I-place_name
+move to the next song in the list,music,play,music_settings,play_music,B-player_setting O O O O O O O,O O O O O O O O
+increase the brightness in this room,iot,iot,iot_hue_lightup,iot_hue_lightup,O O O O B-house_place I-house_place,O O O O O B-house_place
+will the weather be less than ten degree in paris,weather,weather,weather_query,weather_query,O O O O B-weather_descriptor I-weather_descriptor I-weather_descriptor I-weather_descriptor O B-place_name,O O O O O O O B-weather_descriptor O B-place_name
+give me some good sounds,play,audio,play_music,audio_volume_up,O O O O O,O O O O O
+will i need to carry around a brolly today,weather,weather,weather_query,weather_query,O O O O O O O O B-date,O O O O O O O B-weather_descriptor B-date
+is it going to rain at one p. m. today,weather,weather,weather_query,weather_query,O O B-weather_descriptor I-weather_descriptor I-weather_descriptor O B-time I-time I-time B-date,O O O O B-weather_descriptor O B-time I-time I-time B-date
+is fongs dine in only,takeaway,takeaway,takeaway_query,takeaway_query,O B-business_name O O O,O B-person O O O
+how many saturdays are in march,datetime,datetime,datetime_query,datetime_query,O O B-date I-date I-date I-date,O O O O O B-date
+will i need to shovel my driveway this morning,weather,weather,weather_query,weather_query,O O O O O O B-weather_descriptor O B-timeofday,O O O O B-weather_descriptor O O O B-timeofday
+what are the latest crime statistics for me area,news,news,news_query,news_query,O O O O B-news_topic I-news_topic O O O,O O O O O O O O O
+order a twelve piece honey mustard wing combo with seasonimg altnon the fries and a sprite as the drink,takeaway,takeaway,takeaway_order,takeaway_order,O O O O B-food_type I-food_type I-food_type I-food_type O O O O O O O B-drink_type O O O,O O O O B-food_type I-food_type I-food_type O O B-food_type I-food_type I-food_type I-food_type O O O O O O
+start the dogwalking playlist,play,play,play_music,play_music,O O B-playlist_name I-playlist_name,O O B-song_name I-playlist_name
+set a notification for sports game,calendar,calendar,calendar_set,calendar_set,O O O O B-event_name I-event_name,O O O O B-event_name O
+tell me when it is five p. m.,alarm,alarm,alarm_set,datetime_query,O O O O O B-time I-time I-time,O O O O O B-time I-time I-time
+find information on today's stocks,news,qa,news_query,qa_stock,O O O B-date O,O O O B-date O
+will the temperature be higher than forty tomorrow,weather,weather,weather_query,weather_query,O O B-weather_descriptor O B-weather_descriptor I-weather_descriptor I-weather_descriptor B-date,O O B-weather_descriptor O B-weather_descriptor O B-time B-date
+change volume settings in the negative alexa,audio,audio,audio_volume_other,audio_volume_up,O O O O O O O,O O O O O O O
+should i wear sandals or shoes with socks,weather,weather,weather_query,weather_query,O O O B-weather_descriptor I-weather_descriptor I-weather_descriptor I-weather_descriptor I-weather_descriptor,O O O B-weather_descriptor O B-weather_descriptor O B-weather_descriptor
+what day is halloween this year,datetime,datetime,datetime_query,datetime_query,O O O B-event_name B-date I-date,O O O B-event_name I-date I-date
+is there any new information regarding the mexican american border wall,news,news,news_query,news_query,O O O O O O B-news_topic I-news_topic I-news_topic I-news_topic I-news_topic,O O O O O O O B-place_name I-news_topic I-news_topic I-news_topic
+tell me the time in this time zone,datetime,datetime,datetime_query,datetime_query,O O O O O B-time_zone I-time_zone I-time_zone,O O O O O B-time_zone B-time_zone I-place_name
+what day does my birthday fall on this year june twenty seventh,datetime,datetime,datetime_query,datetime_query,O O O O B-event_name O O O O B-date I-date I-date,O O O O B-event_name O O B-date I-date B-date I-date I-date
+clear data,audio,lists,audio_volume_mute,lists_remove,O O,O O
+how many hours distance is between my location and new york,datetime,transport,datetime_convert,transport_query,O O O O O O O O O B-place_name I-place_name,O O O O O O O O O B-place_name I-place_name
+enter song suggestion,music,play,music_likeness,play_music,O O O,O O O
+what time is it in a city,datetime,datetime,datetime_query,datetime_query,O O O O O B-place_name I-place_name,O O O O O O B-place_name
+set notifications on the current weather disasters in america,calendar,news,calendar_set,news_query,O O O O O B-event_name I-event_name O B-place_name,O O O O O O O O B-place_name
+lower the overhead lights,iot,iot,iot_hue_lightdim,iot_hue_lightdim,O O B-house_place O,O O O O
+play my soundtrack,play,play,play_music,play_music,O B-playlist_name I-playlist_name,O O O
+news of the train wreck,news,news,news_query,news_query,O O O B-news_topic I-news_topic,O O B-news_topic B-news_topic I-news_topic
+would you love to see,iot,general,iot_hue_lightchange,general_quirky,O O O O O,O O O O O
+music third day,play,play,play_music,play_music,O B-artist_name I-artist_name,O B-date I-date
+who won the presidential election this year,qa,news,qa_factoid,news_query,O O B-news_topic I-news_topic I-news_topic B-date I-date,O O O O O O O
+add this song for the next playing song,play,music,play_music,music_likeness,O O O O O O O O,O O O O O O O O
+make my usual,iot,iot,iot_coffee,iot_coffee,O O B-coffee_type,O O O
+tell me the news about share market ups and downs,news,qa,news_query,qa_stock,O O O O O B-news_topic I-news_topic I-news_topic I-news_topic I-news_topic,O O O O O O O O O O
+please make the lights natural,iot,iot,iot_hue_lightchange,iot_hue_lightchange,O O O O O,O O O O B-color_type
+when is the next friday the thirteenth,datetime,datetime,datetime_query,datetime_query,O O O O B-date I-date I-date,O O O B-date B-date I-date I-date
+what was the weather for the week,weather,weather,weather_query,weather_query,O O O O O O B-time,O O O O O O O
+olly cancel all soccer practice alarms,alarm,alarm,alarm_remove,alarm_remove,O O O B-alarm_type I-alarm_type O,O O O B-event_name I-event_name O
+i don't want any alarms,alarm,alarm,alarm_remove,alarm_query,O O O O O,O O O O O
+nobody knows,play,play,play_music,music_likeness,B-song_name I-song_name,O I-song_name
+here's the truth about meals on wheels in someone's budget,news,general,news_query,general_quirky,O O O O O O O O O O,O O O O O O O O O O
+find songs from my big band playlist,play,play,play_music,play_music,O O O O B-playlist_name I-playlist_name I-playlist_name,O O O O B-artist_name I-artist_name O
+please skip two songs,music,music,music_settings,music_settings,O B-player_setting O O,O O O O
+please play the latest song from the album abbas,play,play,play_music,play_music,O O O O O O O O B-music_album,O O O O O O O O B-song_name
+i want to know about the brexit,news,news,news_query,news_query,O O O O O B-news_topic I-news_topic,O O O O O B-news_topic B-news_topic
+turn my lights down to a lower level of brightness,iot,iot,iot_hue_lightdim,iot_hue_lightdim,O O O O O O O O O O,O O O O B-change_amount O O O O O
+please play only music of pop mix,play,play,play_music,play_music,O O O O O B-music_genre I-music_genre,O O O O O B-music_genre O
+please play only sad song in music player,play,play,play_music,play_music,O O O B-music_descriptor O O B-device_type I-device_type,O O O B-song_name I-song_name O O I-device_type
+is it twentieth march today,datetime,datetime,datetime_query,datetime_query,O O B-date I-date I-date,O O B-date I-date B-date
+please play only are rehman's songs,play,play,play_music,play_music,O O O O B-artist_name O,O O O O I-artist_name O
+s.,play,qa,play_music,qa_definition,O,O
+please put all the lights,iot,iot,iot_hue_lightup,iot_hue_lightup,O O B-device_type I-device_type I-device_type,O O O O O
+convert eight thirty from gtm four to g. m. t. five thirty,datetime,datetime,datetime_convert,datetime_convert,O B-time I-time O B-time_zone I-time_zone O B-time_zone I-time_zone I-time_zone I-time_zone I-time_zone,O B-time I-time O B-time_zone B-time O B-time_zone I-time_zone I-time_zone B-time I-time
+weather at the moment,weather,weather,weather_query,weather_query,O O B-time I-time,O O O O
+what time should i go for a hike,weather,transport,weather_query,transport_query,O O O O O O O B-event_name,O O O O O O O O
+is this song ed sheeran,music,music,music_query,music_query,O O O B-artist_name I-artist_name,O O O B-artist_name I-person
+i want reggae,play,music,play_music,music_likeness,O O B-music_genre,O O B-music_genre
+set alarm at nine am on next sunday,alarm,alarm,alarm_set,alarm_set,O O O B-time I-time O B-date I-date,O O O B-time I-time O O I-date
+i will require full cover jacket if it is too stormy in evening,weather,weather,weather_query,weather_query,O O O B-weather_descriptor I-weather_descriptor I-weather_descriptor O O O B-weather_descriptor I-weather_descriptor O B-timeofday,O O O B-weather_descriptor I-weather_descriptor B-weather_descriptor O O O O B-weather_descriptor O B-timeofday
+i will need warm socks in winter in morning,weather,weather,weather_query,weather_query,O O O B-weather_descriptor I-weather_descriptor O B-weather_descriptor O B-timeofday,O O O B-weather_descriptor B-weather_descriptor O B-timeofday O B-timeofday
+can you change the volume at,audio,audio,audio_volume_other,audio_volume_up,O O O O O O,O O O O O O
+check the dish price and all,takeaway,cooking,takeaway_query,cooking_recipe,O O B-food_type O O O,O O O O O O
+what's on the radio right now,music,play,music_query,play_radio,O O O O O O,O O O O O O
+play previous song,play,play,play_music,play_music,O B-music_descriptor B-song_name,O O O
+play for me the music by the beatles,play,play,play_music,play_music,O O O O O O B-artist_name I-artist_name,O O O O O O O B-artist_name
+play my playlist party songs,play,play,play_music,play_music,O O O B-playlist_name I-playlist_name,O O O B-playlist_name O
+begin vacuuming,iot,iot,iot_cleaning,iot_cleaning,O B-device_type,O O
+display the seven day forecast for this week,weather,weather,weather_query,weather_query,O B-weather_descriptor I-weather_descriptor I-weather_descriptor I-weather_descriptor O B-date I-date,O O B-time I-date O O B-date I-date
+shall i change my car tires to snow tires soon,weather,weather,weather_query,weather_query,O O O O O O O B-weather_descriptor I-weather_descriptor O,O O O O O O O B-weather_descriptor O O
+a quarter to two,datetime,datetime,datetime_query,datetime_query,B-time I-time I-time I-time,O O I-time I-time
+how's the weather in the capital city,weather,weather,weather_query,weather_query,O O O O B-place_name I-place_name I-place_name,O O O O B-place_name B-place_name I-place_name
+current time in cpt,datetime,datetime,datetime_query,datetime_query,O O O B-place_name,O O O B-time_zone
+set the default audio setting,audio,audio,audio_volume_other,audio_volume_up,O O O O O,O O O O O
+comfort my ears with arijit singh,play,general,play_music,general_quirky,B-song_name I-song_name I-song_name O B-artist_name I-artist_name,O O O O B-person I-person
+decrease twenty percent,audio,qa,audio_volume_down,qa_maths,O B-change_amount I-change_amount,O O O
+hows mysore climate today,weather,weather,weather_query,weather_query,O B-weather_descriptor I-weather_descriptor B-date,O B-place_name O B-date
+replay the musics,music,play,music_settings,play_music,B-player_setting O O,O O O
+what is the latest update on the new york bridge proposal,news,news,news_query,news_query,O O O O O O O B-news_topic I-news_topic I-news_topic I-news_topic,O O O O O O O B-news_topic I-place_name I-news_topic I-news_topic
+play some good song from my play list,play,play,play_music,play_music,O O B-music_descriptor I-music_descriptor O O O O,O O O O O O O O
+say a good joke for me right now,general,general,general_joke,general_joke,O O B-joke_type O O O O O,O O O O O O O O
+is the city cheaper or costlier to live,weather,general,weather_query,general_quirky,O O B-place_name O O O O O,O O O O O O O O
+how safe is the city regarding law and order,weather,general,weather_query,general_quirky,O O O O O O O O O,O O O O O O O I-media_type I-place_name
+did i set an alarm to have tablets in the noon,alarm,alarm,alarm_query,alarm_query,O O O O O B-event_name I-event_name I-event_name O O B-timeofday,O O O O O O O O O O B-timeofday
+show me the latest news from the un,news,news,news_query,news_query,O O O O O O O B-media_type,O O O O O O O B-place_name
+who is this on the radio,music,play,music_query,play_radio,O O O O O O,O O O O O O
+will it be a sticky night,weather,weather,weather_query,weather_query,O O O O B-weather_descriptor B-timeofday,O O O O B-weather_descriptor O
+add selected song,play,music,play_music,music_likeness,O O O,O O O
+did i leave the light on in the garage,iot,iot,iot_hue_lightoff,weather_query,O O O O O O O O B-house_place,O O O O O O O O B-house_place
+how many minutes do i need to wait to pick up my food from china on the go,takeaway,calendar,takeaway_query,calendar_query,O O O O O O O O O O O O O O B-business_name I-business_name I-business_name I-business_name,O O O O O O O O O O O O O O O O O O
+should i open the sun roof,weather,weather,weather_query,weather_query,O O B-weather_descriptor I-weather_descriptor I-weather_descriptor I-weather_descriptor,O O O O B-weather_descriptor I-weather_descriptor
+hey order two wings with french fries from the chinese food store,takeaway,takeaway,takeaway_order,takeaway_order,O O O B-food_type I-food_type I-food_type I-food_type O O B-business_name I-business_name I-business_name,O O O I-food_type I-food_type B-food_type I-food_type O O B-business_name I-business_name I-business_name
+clean the floor,iot,iot,iot_cleaning,iot_cleaning,O O B-house_place,O O O
+hey tell me more about my meetings today,general,calendar,general_quirky,calendar_query,O O O O O O B-event_name B-date,O O O O O O B-event_name B-date
+when is my friend's birthday coming up,general,calendar,general_quirky,calendar_query,O O O B-relation B-event_name O O,O O O B-relation B-event_name O O
+i hate how long the traffic jams get,general,transport,general_quirky,transport_traffic,O O O B-time O O O O,O O O O O O O O
+what's shakin bacon,general,qa,general_quirky,qa_definition,O B-food_type I-food_type,O B-definition_word I-definition_word
+do you think i should go to the theater today,general,general,general_quirky,general_quirky,O O O O O O O O B-place_name B-date,O O O O O O O O O B-date
+please tell me the score of the game,general,general,general_quirky,qa_factoid,O O O O O O O O,O O O O O O O O
+i bought pre season baseball tickets,general,general,general_quirky,general_quirky,O O B-event_name I-event_name I-event_name O,O O O O O O
+i need to buy gas,general,iot,general_quirky,general_quirky,O O O O O,O O O O O
+tell me some best tourist places to visit in america,recommendation,recommendation,recommendation_locations,recommendation_locations,O O O B-place_name I-place_name I-place_name O O O B-place_name,O O O O O O O O O B-place_name
+what's my upcoming week look like,calendar,calendar,calendar_query,calendar_query,O O B-date I-date O O,O O O O O O
+veganism,general,cooking,general_quirky,cooking_recipe,O,O
+plant based news,news,news,news_query,news_query,B-news_topic I-news_topic O,B-news_topic O O
+what is a good iranian film from two thousand and sixteen,recommendation,general,recommendation_movies,general_quirky,O O O O O O O B-date I-date I-date I-date,O O O O B-place_name O O B-date I-date I-date I-date
+hey what has been happening interesting in sports lately,general,news,general_quirky,news_query,O O O O O O O O O,O O O O O O O B-news_topic O
+what features do you have planned to release in the future,general,recommendation,general_quirky,recommendation_events,O O O O O O O O O O O,O O O O O O O O O O O
+technology,general,news,general_quirky,news_query,O,O
+today i had a meeting with george,general,calendar,general_quirky,calendar_set,B-date O O O B-event_name O B-person,B-date O O O B-event_name O B-person
+please know that today i had a meeting with george,general,calendar,general_quirky,calendar_set,O O O O O O O B-event_name O B-person,O O O B-date O O O B-event_name O B-person
+have you heard any good music lately,general,music,general_quirky,music_query,O O O O O O O,O O O O O O O
+is there a groomer in town for cats only,general,recommendation,general_quirky,recommendation_events,O O O O O O O O O,O O O O O O O O O
+trump,general,news,general_quirky,news_query,O,B-news_topic
+the weather was bad today,general,weather,general_quirky,weather_query,O O O O B-date,O O O O B-date
+baseball scores,general,news,general_quirky,news_query,O O,B-news_topic O
+web searches,general,qa,general_quirky,qa_factoid,O O,O O
+mark today as the start of my diet,calendar,calendar,calendar_set,calendar_set,O B-date O B-event_name I-event_name I-event_name I-event_name I-event_name,O B-date O O O O O O
+is soft cheese better than hard,cooking,cooking,cooking_recipe,cooking_recipe,O B-food_type I-food_type O O O,O B-food_type B-food_type O O B-food_type
+play videos,general,play,general_quirky,play_music,O O,O O
+math,general,qa,general_quirky,qa_maths,O,O
+start a gossip,general,news,general_quirky,news_query,O O O,O O O
+when i came back from this place,general,general,general_quirky,general_quirky,O O O O O B-place_name I-place_name,O O O O O O O
+health,general,news,general_quirky,news_query,O,O
+latest movies in theaters,general,recommendation,general_quirky,recommendation_movies,O O O O,O O O B-place_name
+are you working for the n. s. a.,general,news,general_quirky,news_query,O O O O O O O O,O O O O O I-media_type I-media_type I-media_type
+what is the top searches in google today,general,email,general_quirky,qa_factoid,O O O O O O O B-date,O O O O O O O B-date
+sticking to diet,general,cooking,general_quirky,cooking_recipe,O O O,O O O
+vacation spots,general,recommendation,general_quirky,general_quirky,O O,O O
+elections in up,news,news,news_query,news_query,O O O,O O B-news_topic
+friend updates,general,news,general_quirky,news_query,O O,B-relation O
+what do you know about fringe in edinburgh next year,general,recommendation,general_quirky,recommendation_events,O O O O O B-event_name O B-place_name B-date I-date,O O O O O B-place_name O B-place_name B-date I-date
+add meeting reminder for sunday with my parents in law,calendar,calendar,calendar_set,calendar_set,O B-event_name O O B-date O O B-relation I-relation I-relation,O B-event_name O O B-date O O B-relation I-event_name I-event_name
+set first week of june as holiday in my calendar,calendar,calendar,calendar_set,calendar_set,O B-time I-time I-time I-time O B-event_name O O O,O B-date I-date I-date I-date O B-event_name O O O
+set meeting with joanna on saturday four p. m.,calendar,calendar,calendar_set,calendar_set,O O O B-person O B-date B-time I-time I-time,O B-event_name O B-person O B-date B-time I-time I-time
+show me my meetings this friday,calendar,calendar,calendar_query,calendar_query,O O O O B-date I-date,O O O B-event_name O B-date
+remind me my mom's birthday a week before,calendar,calendar,calendar_set,calendar_set,O O O B-relation B-event_name B-time I-time I-time,O O O B-relation B-event_name O I-date O
+olly there's a good band playing tonight at nine at jazz bar i want to go,calendar,calendar,calendar_set,calendar_set,O O O O B-event_name I-event_name B-timeofday B-time I-time O B-place_name I-place_name O O O O,O O O O B-event_name I-event_name B-timeofday O B-time O B-place_name I-place_name O O O O
+schedule a meeting with the accounting department on two thirty p. m. on friday,calendar,calendar,calendar_set,calendar_set,O O B-event_name O O B-business_name I-business_name O B-time I-time I-time I-time O B-date,O O B-event_name O O B-event_name I-event_name O B-time I-time I-time I-time O B-date
+are there morning shows available,calendar,play,calendar_query,play_radio,O O B-timeofday B-event_name O,O O O O O
+can you give me the movie schedule,calendar,recommendation,calendar_query,recommendation_events,O O O O O B-event_name O,O O O O O O O
+set a reminder up next month to get my oil changed,calendar,calendar,calendar_set,calendar_set,O O O O B-date I-date O O O B-event_name I-event_name,O O O O B-date I-date O O O O O
+what is happening after one and before three p. m.,calendar,calendar,calendar_query,calendar_query,O O O B-time I-time O B-time I-time I-time I-time,O O O B-time I-time I-time I-time I-time I-time I-time
+set reminder to print the documents on tuesday morning,calendar,calendar,calendar_set,calendar_set,O O O B-event_name I-event_name I-event_name O B-date B-timeofday,O O O B-event_name O I-event_name O B-date B-timeofday
+remind me to take my medicine at nine am,calendar,calendar,calendar_set,calendar_set,O O O O O B-event_name O B-time I-time,O O O B-event_name I-event_name I-event_name O B-time I-time
+set reminder for noon to get lunch with boss,calendar,calendar,calendar_set,calendar_set,O O O B-timeofday O O B-event_name I-event_name I-event_name,O O O B-timeofday O O B-meal_type O B-relation
+remind me about my meeting an hour before it begins,calendar,calendar,calendar_set,calendar_set,O O O O B-event_name B-time I-time O O O,O O O O B-event_name O O O O O
+can i know what i have to do the next saturday at six p. m.,calendar,calendar,calendar_set,calendar_query,O O O O O O O O O O B-date O B-time I-time I-time,O O O O O O O O O O B-date O B-time I-time I-time
+can you check the facts on this issue,calendar,general,calendar_query,general_quirky,O O O O O O O O,O O O O O O O O
+give me to do list,calendar,lists,calendar_query,lists_query,O O O O O,O O B-list_name I-list_name O
+remind me to start getting ready by five p. m. please,calendar,calendar,calendar_set,calendar_set,O O O O B-event_name I-event_name O B-time I-time I-time O,O O O O O B-event_name B-time B-time I-time I-time O
+schedule a lunch meeting with brent on wednesday at noon,calendar,calendar,calendar_set,calendar_set,O O B-event_name I-event_name O B-person O B-date O B-timeofday,O O B-meal_type I-event_name O B-person O B-date O B-timeofday
+give me a reminder twenty four hours before my friday meeting with edg,calendar,calendar,calendar_set,calendar_set,O O O O B-time I-time I-time I-time O B-date B-event_name O B-person,O O O O B-date I-time I-time O O B-date B-event_name O B-person
+search my calendar for my next event and notify me before it occurs,calendar,calendar,calendar_set,calendar_set,O O O O O O O O O O B-time O O,O O O O O O O O O O O O O
+remind me the day before my car is due,calendar,calendar,calendar_set,calendar_set,O O O B-date I-date O B-event_name O O,O O O B-date O O B-event_name I-event_name I-event_name
+will there any events downtown this weekend,calendar,recommendation,calendar_query,recommendation_events,O O O O B-place_name B-date I-date,O O O O B-place_name B-date I-date
+set a reminder to notify me one hour before lunch meeting,calendar,calendar,calendar_set,calendar_set,O O O O O O O O O B-event_name I-event_name,O O O O O O B-time I-time O B-meal_type B-event_name
+for every odd numbered sunday set a reminder for,calendar,calendar,calendar_set,calendar_set,O O B-general_frequency I-general_frequency I-general_frequency O O O O,O B-general_frequency I-date I-date I-general_frequency O O O O
+can you give me the details of upcoming annual function on twenty sixth march,general,calendar,general_quirky,calendar_query,O O O O O O O O B-general_frequency B-event_name O B-date I-date I-date,O O O O O O O O B-event_name B-event_name O B-date I-date I-date
+wake me at six am thursday so i have time for the meeting,calendar,alarm,calendar_set,alarm_set,O O O B-time I-time B-date O O O O O O B-event_name,O O O B-time I-time B-date O O O O O O B-event_name
+remind me the meeting with allen on fifteenth march,calendar,calendar,calendar_set,calendar_set,O O O B-event_name O B-person O B-time I-time,O O O B-event_name O B-person O B-date I-date
+set a notification for three two and one hours before next week's english final,calendar,calendar,calendar_set,calendar_set,O O O O O O O O O O B-date I-date B-event_name I-event_name,O O O O B-time I-time I-time I-time I-time O B-date I-date B-event_name I-event_name
+can you remind me to take the garbage out on tuesday,calendar,calendar,calendar_set,calendar_set,O O O O O O O B-event_name I-event_name O B-date,O O O O O B-event_name I-event_name I-event_name I-event_name O B-date
+where is the venue in which the marriage of tom is going to take place,calendar,calendar,calendar_query,calendar_query,O O O O O O O B-event_name O O O O O O O,O O O O O O B-event_name B-event_name I-event_name B-person O O O O O
+please remind me to call mom in half an hour,calendar,calendar,calendar_set,calendar_set,O O O O B-event_name B-relation B-time I-time I-time I-time,O O O O B-event_name B-relation O B-time I-time I-time
+remind me to send email to boss after one hour,calendar,calendar,calendar_set,calendar_set,O O O O O O B-relation O O O,O O O O B-event_name O B-relation O B-time I-time
+remind me of rita's birthday twenty four hours in advance,calendar,calendar,calendar_set,calendar_set,O O O B-person B-event_name B-time I-time I-time I-time I-time,O O O B-person B-event_name B-date I-time I-time O O
+remind me about my anniversary in one day advance,calendar,calendar,calendar_set,calendar_set,O O O O B-event_name B-date I-date I-date I-date,O O O O B-event_name O B-date I-date O
+block one hour from ten tomorrow morning,calendar,calendar,calendar_set,calendar_set,O B-time I-time O B-time B-date B-timeofday,O B-time I-time I-time I-time B-date B-timeofday
+i am unavailable from four to six in the evening tomorrow mark my calendar,calendar,calendar,calendar_set,calendar_set,O O O O B-time O B-time O O B-timeofday B-date O O O,O O O O B-time O I-time O O B-timeofday B-date O O O
+schedule a one hour appointment for saturday,calendar,calendar,calendar_set,calendar_set,O O B-time I-time O O B-date,O O B-time I-time B-event_name O B-date
+please clear my calendar,calendar,calendar,calendar_remove,calendar_remove,O B-time O O,O O O O
+what's for today,calendar,general,calendar_query,general_quirky,O O B-date,O O B-date
+just let me know next weeks weather in california,email,weather,email_query,weather_query,O O O O B-time I-time O O B-place_name,O O O O B-date I-date O O B-place_name
+remind me to check the stew at six o'clock,calendar,calendar,calendar_set,calendar_set,O O O B-event_name I-event_name I-event_name O B-time O,O O O O O O O B-time O
+please show today meeting with clients,calendar,calendar,calendar_query,calendar_query,O O B-date O O B-relation,O O B-date B-event_name O B-relation
+what is on the agenda for the four p. m. meeting with joe,calendar,calendar,calendar_query,calendar_query,O O O O O O O B-time I-time I-time O O B-person,O O O O O O O B-time I-time I-time B-event_name O B-person
+how much mehta willing to invest in my company in meeting which held today at five hundred and twenty p. m.,calendar,calendar,calendar_query,calendar_query,O O B-person O O O O O O O B-event_name O O B-date O B-time I-time I-time I-time I-time I-time,O O O O O O O O O O O O O B-date O B-time I-time I-time I-time I-time I-time
+thirteenth june is a day of election result please set it,calendar,datetime,calendar_set,datetime_query,B-date I-date O O O O B-event_name I-event_name O O O,B-date I-date O O O O B-news_topic O O O O
+please add my pay days,calendar,calendar,calendar_set,calendar_set,O O O B-event_name I-event_name,O O O O O
+i want a meeting till three o'clock,calendar,calendar,calendar_set,calendar_set,O O O B-event_name O B-time I-time,O O O B-event_name O B-time O
+remind me tonight to pick up my dry cleaning at eight p. m.,calendar,calendar,calendar_set,calendar_set,O O O O B-event_name I-event_name I-event_name I-event_name I-event_name O B-time I-time I-time,O O B-timeofday O B-event_name I-event_name I-event_name I-event_name I-event_name O B-time I-time I-time
+remind me about the meeting tomorrow one hour before,calendar,calendar,calendar_set,calendar_set,O O O O B-event_name B-date O O O,O O O O B-event_name B-date B-time I-time O
+plan for tomorrow,calendar,calendar,calendar_query,calendar_set,O O B-date,O O B-date
+what is the plan today,calendar,calendar,calendar_query,calendar_query,O O O O O,O O O O B-date
+please set a meeting to discuss terrorism with fred on the next available meeting day,calendar,calendar,calendar_set,calendar_set,O O O B-event_name O B-event_name I-event_name O B-person O O B-date I-date O O,O O O B-event_name O O B-event_name O B-person O O O O B-event_name O
+remind me when i am at the library to get a new library card,calendar,calendar,calendar_set,calendar_set,O O O O O O O B-place_name O B-event_name I-event_name I-event_name I-event_name I-event_name,O O O O O O O O O O O O B-event_name I-event_name
+cancel all my appointments after three p. m. today and inform me the details,calendar,calendar,calendar_remove,calendar_remove,O O O B-event_name O B-time I-time I-time B-date O O O O O,O O O B-event_name B-time I-time I-time I-time B-date O O O O O
+in my calendar delete all of my golf events for the current month,calendar,calendar,calendar_remove,calendar_remove,O O O O O O O B-event_name I-event_name O O O B-date,O O O O O O O B-event_name O O O O O
+do i have anything planned for the twenty first,calendar,calendar,calendar_query,calendar_query,O O O O O O O B-date I-date,O O O O O O B-date B-date I-date
+hey cancel all my other meetings and calls for second march as it is jim's birthday tag it as an event in your calendar,calendar,calendar,calendar_set,calendar_set,O O O O O O O O O B-date I-date O O O B-person B-event_name O O O O O O O O,O O O O O B-event_name O O O B-date I-date O O O B-person B-event_name O O O O O O O O
+hey send a meeting invite to mr. ross for this friday's meeting and block my calendar for friday afternoon,calendar,calendar,calendar_set,calendar_set,O O O B-event_name O O B-person I-person O B-date I-date O O O O O O B-date I-date,O O O B-event_name O O B-person I-person O O I-date B-event_name O O O O O B-date B-timeofday
+add practice to calendar on feb four at king's park at two p. m.,calendar,calendar,calendar_set,calendar_set,O O O O O B-date I-date O B-place_name I-place_name O B-time I-time I-time,O B-event_name O O O B-date I-date O B-place_name I-place_name O B-time I-time I-time
+please add practice on feb four at king's park at two p. m.,calendar,calendar,calendar_set,calendar_set,O O O O B-date I-date O B-place_name I-place_name O B-time I-time I-time,O O B-event_name O B-date I-date O B-place_name I-place_name O B-time I-time I-time
+add shopping to my calendar for tomorrow,calendar,calendar,calendar_set,calendar_set,O O O O O O B-date,O B-event_name O O O O B-date
+remind me i take mom to the hairdresser's thursday at one thousand one hundred am,calendar,calendar,calendar_set,calendar_set,O O O O B-relation O O B-relation B-date O B-time I-time I-time I-time I-time,O O O O B-relation O O B-event_name B-date O B-time I-time I-time I-time I-time
+remind me to start supper this afternoon at five,calendar,calendar,calendar_set,calendar_set,O O O O B-event_name O B-time I-time I-time,O O O O B-meal_type B-timeofday B-timeofday O B-time
+what's been happening for the last two months,news,news,news_query,news_query,O O O O O B-date I-date I-date,O O O O O B-time I-time I-time
+give me an update on the election in one hour,calendar,news,calendar_set,news_query,O O O O O O B-event_name O B-time I-time,O O O O O O B-event_name O B-time I-time
+new meeting add bill and malinda as attendees,calendar,calendar,calendar_set,calendar_set,O B-event_name O B-person I-person I-person O O,O B-event_name O B-person O B-person O O
+what are the upcoming concerts in dallas,calendar,recommendation,calendar_query,recommendation_events,O O O O O O B-place_name,O O O O B-event_name O B-place_name
+remove my appointment with my doctor on saturday please,calendar,calendar,calendar_remove,calendar_remove,O O B-event_name O B-relation I-relation O B-date O,O O B-event_name O O B-relation O B-date O
+is there valet service at the event,calendar,transport,calendar_query,transport_traffic,O O B-relation I-relation O O O,O O O O O O O
+what reminders do i have scheduled before noon tomorrow,calendar,calendar,calendar_query,calendar_query,O O O O O O O B-timeofday B-date,O O O O O O O I-time B-date
+dorothy needs to talk to me about our divorce can you please set up a meeting as soon as i am available,calendar,calendar,calendar_set,calendar_set,B-person O O O O O O O B-event_name O O O O O O B-event_name O O O O O O,B-person O O O O O O O O O O O O O O B-event_name O O O O O O
+on monday the twentieth i need to have a conversation with greg about our weekend trip,calendar,calendar,calendar_set,calendar_set,O B-date I-date I-date O O O O O B-event_name O B-person O B-event_name I-event_name I-event_name,O B-date I-date I-date O O O O O O O B-person O O B-event_name O
+set a reminder in one hour for my bread to bake,calendar,calendar,calendar_set,calendar_set,O O O O B-time I-time O O B-event_name I-event_name I-event_name,O O O O B-time I-time O O O O O
+set a reminder for the thirteenth that i have a lunch with dale,calendar,calendar,calendar_set,calendar_set,O O O O O B-date O O O O B-meal_type O O,O O O O O B-date O O O O B-meal_type O B-person
+one thousand two hundred and thirty p. m. already you will have a meeting in ten mins,calendar,calendar,calendar_query,calendar_set,B-time I-time I-time I-time I-time I-time I-time I-time O O O O O B-event_name O B-time I-time,B-time I-time I-time I-time I-time I-time I-time I-time O O O O O B-event_name O I-time I-time
+what date is it,calendar,datetime,calendar_query,datetime_query,O O O O,O O O O
+please remind me to go to the post office,calendar,calendar,calendar_set,calendar_set,O O O O O O O O O,O O O O O O O B-event_name I-event_name
+clear everything off my calendar for the rest of the year,calendar,calendar,calendar_remove,calendar_remove,O O O O O O O B-date I-date I-date I-date,O O O O O O B-date B-time I-date I-date I-date
+please alert me a day before jeff's birthday,calendar,calendar,calendar_set,calendar_set,O O O B-date I-date I-date B-person B-event_name,O O O O O O B-person B-event_name
+send me an alert and hour before my next appointment,calendar,calendar,calendar_set,calendar_set,O O O O O B-time I-time O O B-event_name,O O O O O O O O O B-event_name
+thirty minute reminder on meeting for tuesday,calendar,calendar,calendar_set,calendar_set,B-time I-time O O O O B-date,O O O O B-event_name O B-date
+save event for five p. m. to six p. m. on march eighteenth,calendar,calendar,calendar_set,calendar_set,O O O B-time I-time I-time I-time I-time I-time I-time O B-date I-date,O O O B-time I-time I-time O B-time I-time I-time O B-date I-date
+remove next monday's meeting,calendar,calendar,calendar_remove,calendar_remove,O B-date I-date B-event_name,O O B-date B-event_name
+yesterday at noontime in times square what was the protest about,news,news,news_query,news_query,B-date O B-time O B-place_name I-place_name O O O O O,B-date O B-timeofday O B-place_name I-place_name O O O B-news_topic O
+i need to know more about the parade this weekend,general,calendar,general_quirky,calendar_query,O O O O O O O B-event_name B-date I-date,O O O O O O O B-event_name B-date I-date
+i want to know more about the fair this weekend,general,calendar,general_quirky,calendar_query,O O O O O O O O B-date I-date,O O O O O O O B-event_name B-date I-date
+is it wednesday,datetime,calendar,datetime_query,calendar_query,O O B-date,O O B-date
+make march eighteen a repeating appointment for pearl's birthday,calendar,calendar,calendar_set,calendar_set,O B-date I-date O O B-event_name I-event_name I-event_name I-event_name,O B-date I-date O B-event_name B-event_name O B-person B-event_name
+create reminder for laundry at eight p. m.,calendar,calendar,calendar_set,calendar_set,O O O O O B-time I-time I-time,O O O B-event_name O B-time I-time I-time
+set a reminder every day at noon to take medication,calendar,calendar,calendar_set,calendar_set,O O O B-general_frequency I-general_frequency O B-timeofday O O O,O O O B-general_frequency I-general_frequency O B-timeofday O B-event_name B-event_name
+tell me more about my events,general,calendar,general_quirky,calendar_query,O O O O O O,O O O O O O
+tell me current events between yesterday and this morning,calendar,calendar,calendar_query,calendar_query,O O O O O B-date O O B-timeofday,O O O O O B-date O B-timeofday B-timeofday
+please set lunch meeting at twelve p. m. for every wednesday in march,calendar,calendar,calendar_set,calendar_set,O O B-event_name I-event_name O B-time I-time I-time O B-general_frequency I-general_frequency O B-date,O O B-meal_type I-event_name O B-time I-time I-time O B-general_frequency I-general_frequency O B-date
+please put event into my calendar and mark it as a repeating event,calendar,calendar,calendar_set,calendar_set,O O O O O O O O O O O O O,O O O O O O O O O O O B-event_name O
+what are my plans for the month of may,calendar,calendar,calendar_query,calendar_query,O O O O O O B-date I-date I-date,O O O O O O O O B-date
+add jane's birthday party for tomorrow two p. m. at one hundred and twenty three main on my calendar,calendar,calendar,calendar_set,calendar_set,O B-person B-event_name I-event_name O B-date B-time I-time I-time O B-place_name I-place_name I-place_name I-place_name I-place_name I-place_name O O O,O B-person B-event_name I-event_name O B-date B-time I-time I-time O B-time I-time I-time I-time I-time I-time O O O
+meeting reminders from three to five,calendar,calendar,calendar_query,calendar_set,B-event_name O O B-time I-time I-time,B-event_name O O B-time I-time I-time
+will you remind me of the dentist appointment i have in two hours,calendar,calendar,calendar_set,calendar_set,O O O O O O B-event_name I-event_name O O O B-time I-time,O O O O O O B-event_name I-event_name O O O I-time I-time
+delete my meeting for two o'clock p. m. today,calendar,calendar,calendar_remove,calendar_remove,O O B-event_name O B-time I-time I-time I-time O,O O B-event_name O B-time O I-time I-time B-date
+will you send a calendar invite out to james and alice for brunch at eleven am on tuesday,calendar,calendar,calendar_set,calendar_set,O O O O O O O O B-person I-person I-person O B-event_name O B-time I-time O B-date,O O O O O O O O B-person O B-person O B-event_name O B-time I-time O B-date
+remind me to water my plants every tuesday thursday and saturday,calendar,calendar,calendar_set,calendar_set,O O O B-event_name I-event_name I-event_name B-general_frequency I-general_frequency I-general_frequency I-general_frequency I-general_frequency,O O O B-event_name I-event_name I-event_name B-general_frequency I-general_frequency B-date O B-date
+can you remind me to order the turkey three weeks before thanksgiving,calendar,calendar,calendar_set,calendar_set,O O O O O B-event_name I-event_name I-event_name O O O O,O O O O O O O O B-date I-date I-date B-date
+i want to make a note on my calendar for the event tomorrow at the library,calendar,calendar,calendar_set,calendar_set,O O O O O O O O O O O O B-date O B-place_name I-place_name,O O O O O O O O O O O O B-date O O B-place_name
+within the past three months how many meetings did i have with mr. richards,calendar,calendar,calendar_query,calendar_query,O O B-time I-time I-time O O B-event_name O O O O B-person I-person,O O O I-time I-time O O B-event_name O O O O B-person I-person
+is today saint patricks day,calendar,qa,calendar_query,qa_factoid,O B-date B-event_name I-event_name I-event_name,O O O I-person O
+do i have a meeting on saturday march twenty fifth,calendar,calendar,calendar_query,calendar_query,O O O O B-event_name O B-date I-date I-date I-date,O O O O B-event_name O B-date B-date I-date I-date
+is jessica's birthday on april twelfth,calendar,calendar,calendar_query,calendar_query,O B-person O O B-date I-date,O B-person B-event_name O B-date I-date
+do i have a meeting this afternoon,calendar,calendar,calendar_query,calendar_query,O O O O B-event_name B-timeofday I-timeofday,O O O O B-event_name B-timeofday B-timeofday
+info of the upcoming events,recommendation,calendar,recommendation_events,calendar_query,O O O O O,O O O O O
+what do i have scheduled for the nineteenth at two p. m.,calendar,calendar,calendar_query,calendar_query,O O O O O O B-date I-date O B-time I-time I-time,O O O O O O O B-date O B-time I-time I-time
+do i have anything set for the fourth of july this year,calendar,calendar,calendar_query,calendar_query,O O O O O O B-date I-date I-date I-date I-date I-date,O O O O O O O B-date I-date I-date I-date I-date
+remind upcoming meeting with eminem,calendar,calendar,calendar_set,calendar_set,O O B-event_name O B-person,O O B-event_name O B-artist_name
+remind me to call mom every tuesday at ten am,calendar,calendar,calendar_set,calendar_set,O O O B-event_name I-event_name B-general_frequency I-general_frequency O B-time I-time,O O O B-event_name B-relation B-general_frequency I-general_frequency O B-time I-time
+set repeating reminder for every sunday,calendar,calendar,calendar_set,calendar_set,O O O O B-general_frequency I-general_frequency,O B-event_name O O B-general_frequency I-general_frequency
+information of recent events,calendar,news,calendar_query,news_query,O O O O,O O O O
+what is my schedule for the day,calendar,calendar,calendar_query,calendar_query,O O O O O B-date I-date,O O O O O O O
+hayathis daughter baby shower,calendar,general,calendar_set,general_quirky,B-person B-event_name I-event_name I-event_name,B-person O O O
+open meeting time,calendar,calendar,calendar_query,calendar_set,O B-event_name O,O B-event_name O
+remind me two days before my wife birthday,calendar,calendar,calendar_set,calendar_set,O O O O O O B-relation B-event_name,O O B-date O O O B-relation I-event_name
+just set me reminders about pending bill payments,calendar,calendar,calendar_set,calendar_set,O O O O O B-event_name I-event_name I-event_name,O O O O O O B-event_name I-event_name
+just let me know the important meetings with my boss over the week,calendar,calendar,calendar_set,calendar_set,O O O O O B-event_name I-event_name I-event_name I-event_name I-event_name B-time I-time I-time,O O O O O O B-event_name O O B-relation O O B-time
+ok google delete eric's b. day from the calendar,calendar,calendar,calendar_remove,calendar_remove,O O O B-event_name I-event_name I-event_name O O O,O O O B-person B-event_name I-event_name O O O
+show meetings,calendar,calendar,calendar_set,calendar_query,O B-event_name,O B-event_name
+meetings from twenty to twenty five june,calendar,calendar,calendar_query,calendar_set,B-event_name O B-time I-time I-time I-time I-time,B-event_name O B-time I-time I-date I-date I-date
+rahul marriage reminder,calendar,calendar,calendar_query,calendar_set,B-person B-event_name O,B-person B-event_name O
+upcoming events in calendar,calendar,calendar,calendar_set,calendar_query,B-event_name I-event_name O O,O O O O
+can you put in lee's birthday on the twenty second of june,calendar,play,calendar_set,play_music,O O O O B-event_name I-event_name O O B-date I-date I-date I-date,O O O O B-person I-event_name O O B-date I-date I-date I-date
+remove tonights dinner with shelly,calendar,calendar,calendar_remove,calendar_remove,O B-event_name I-event_name I-event_name I-event_name,O B-date B-meal_type O B-person
+is there a meeting on my calendar this afternoon,calendar,calendar,calendar_query,calendar_query,O O O B-event_name O O O B-timeofday I-timeofday,O O O B-event_name O O O B-timeofday B-timeofday
+what time does the zach brown concert on june third begin,calendar,calendar,calendar_query,calendar_query,O O O O B-event_name I-event_name I-event_name O B-date I-date O,O O O O B-person I-person I-event_name O B-date I-date O
+exhibition two thousand and seventeen mass on mar twenty five make a note of it on the corresponding date,calendar,calendar,calendar_set,calendar_set,B-event_name I-event_name I-event_name I-event_name I-event_name I-event_name O B-date I-date I-date O O O O O O O O O,B-event_name I-event_name I-date I-event_name I-event_name I-event_name O B-date I-date I-date O O O O O O O O O
+make a repeating reminder for this calendar event,calendar,calendar,calendar_set,calendar_set,O O O O O O O O,O O B-event_name O O O O O
+could you reschedule my meeting,calendar,calendar,calendar_query,calendar_set,O O O O B-event_name,O O O O B-event_name
+show me the events in my work calendar for next week,calendar,calendar,calendar_set,calendar_query,O O O O O O B-event_name O O B-date I-date,O O O O O O B-event_name O O B-date I-date
+at what time is the italian cafe closed between lunch and dinner,calendar,calendar,calendar_query,calendar_query,O O O O O B-business_name I-business_name O O O O O,O O O O O B-food_type B-business_type O O B-meal_type O B-meal_type
+when does the super bowl officially start,qa,qa,qa_factoid,qa_factoid,O O O B-event_name I-event_name O O,O O O O I-event_name O O
+please add dinner with mary to my calendar on saturday,calendar,calendar,calendar_set,calendar_set,O O B-event_name I-event_name I-event_name O O O O B-date,O O B-meal_type O B-person O O O O B-date
+cancel my plans to pick up my parents from the airport,calendar,calendar,calendar_remove,calendar_remove,O O O O B-event_name I-event_name I-event_name I-event_name O O B-place_name,O O O O B-event_name I-event_name I-event_name B-relation I-event_name O B-place_name
+research the clients that will attend the meeting,calendar,calendar,calendar_set,calendar_query,O O O O O O B-event_name I-event_name,O O O O O O O B-event_name
+please tune nine hundred and thirty eight f. m. radio mirchi,play,play,play_radio,play_radio,O O B-radio_name I-radio_name I-radio_name I-radio_name I-radio_name I-radio_name I-radio_name O O,O O B-radio_name I-radio_name I-radio_name I-radio_name I-radio_name I-radio_name I-radio_name B-radio_name I-radio_name
+play f. m.,play,play,play_radio,play_radio,O O O,O B-radio_name I-radio_name
+put on,play,play,play_radio,play_audiobook,O O,O O
+play an f. m.,play,play,play_radio,play_radio,O O O O,O O B-radio_name I-radio_name
+tune to classic hits,play,play,play_radio,play_music,O O B-radio_name I-radio_name,O O B-music_genre I-music_genre
+play kiss f. m. for me,play,play,play_radio,play_music,O B-radio_name I-radio_name I-radio_name O O,O B-song_name I-radio_name I-radio_name O O
+please play radio station one right now,play,play,play_radio,play_radio,O O B-radio_name I-radio_name I-radio_name O O,O O O O B-radio_name O O
+please scan the am dial on the radio right now,play,play,play_radio,play_radio,O O O O O O O O B-date I-date,O O O B-radio_name O O O O O O
+play,play,play,play_radio,play_music,O,O
+let's play music hits,play,play,play_radio,play_music,O O O O,O O O O
+play c. n. n. radio,play,play,play_radio,play_radio,O B-radio_name I-radio_name I-radio_name I-radio_name,O B-radio_name I-media_type I-media_type O
+start sirius xm radio channel,play,play,play_radio,play_radio,O B-radio_name I-radio_name I-radio_name I-radio_name,O B-radio_name I-radio_name O O
+i want to hear a station that plays r. & b.,play,play,play_radio,play_radio,O O O O O B-radio_name I-radio_name I-radio_name I-radio_name I-radio_name I-radio_name,O O O O O O O O B-radio_name I-radio_name I-radio_name
+play nineties hip hop,play,play,play_music,play_music,O B-music_genre I-music_genre I-music_genre,O B-music_genre B-music_genre I-music_genre
+turn on a country music station,play,play,play_radio,play_radio,O O O B-music_genre O O,O O O B-radio_name I-radio_name I-radio_name
+could you please play the f. m. station which plays pop songs,play,play,play_radio,play_radio,O O O O O B-radio_name I-radio_name O O O B-music_genre O,O O O O O B-radio_name I-radio_name I-radio_name O O B-music_genre O
+please find the radio station currently playing howard stern,play,play,play_radio,play_radio,O O O O O O O O O,O O O O O O O B-radio_name I-radio_name
+play any pop f. m. channel,play,play,play_radio,play_radio,O O B-music_genre B-radio_name I-radio_name O,O O B-radio_name I-radio_name I-radio_name I-radio_name
+play the last doctor who radio broadcast,play,play,play_radio,play_podcasts,O O O O O B-media_type I-media_type,O O O B-podcast_name I-audiobook_name O O
+turn on some n. p. r. and play them out of my speakers,play,play,play_radio,play_radio,O O O B-radio_name I-radio_name I-radio_name O O O O O O B-device_type,O O O B-radio_name I-radio_name I-radio_name O O O O O O O
+i want to hear the bob cesca show,play,play,play_radio,play_radio,O O O O O O O O,O O O O O O I-person O
+play romantic music in nash f. m. ninety two point seven,play,play,play_radio,play_music,O B-music_genre B-media_type O B-radio_name I-radio_name I-radio_name I-radio_name I-radio_name I-radio_name I-radio_name,O B-music_genre O O B-music_genre I-radio_name I-radio_name I-radio_name I-radio_name I-radio_name I-radio_name
+play station gx in the radio,play,play,play_radio,play_radio,O B-radio_name I-radio_name O O O,O O B-radio_name O O O
+play britney spears live concert series,play,play,play_radio,play_music,O O O O O O,O B-artist_name I-artist_name O I-playlist_name O
+play bhuli bisri yaadien program on ninety one point three f. m.,play,play,play_radio,play_radio,O O O O O O B-radio_name I-radio_name I-radio_name I-radio_name I-radio_name I-radio_name,O B-radio_name I-radio_name I-radio_name O O B-radio_name I-radio_name I-radio_name I-radio_name I-radio_name I-radio_name
+search for podcasts that cover men's issues,play,play,play_podcasts,play_podcasts,O O B-media_type O O B-podcast_descriptor I-podcast_descriptor,O O O O O O O
+f. m. ninety three point five radio songs,play,play,play_radio,play_radio,B-radio_name I-radio_name I-radio_name I-radio_name I-radio_name I-radio_name I-radio_name B-media_type,B-radio_name I-radio_name I-radio_name I-radio_name I-radio_name I-radio_name O O
+play country radio,play,play,play_radio,play_radio,O B-radio_name I-radio_name,O B-music_genre O
+play prairie home companion on the car radio,play,play,play_radio,play_radio,O O O O O O B-device_type I-device_type,O B-radio_name I-radio_name I-radio_name O O B-device_type I-radio_name
+can i get delilah on the radio in the bedroom,play,play,play_radio,play_radio,O O O O O O O O O B-house_place,O O O B-radio_name O O O O O B-house_place
+open spotify and open workout,play,play,play_radio,play_radio,O O O O O,O B-app_name O O O
+play netflix on my p. s. four,play,play,play_radio,play_radio,O B-app_name O O B-device_type I-device_type I-device_type,O B-media_type O O B-device_type I-device_type I-radio_name
+play me an upbeat song through your speakers,play,play,play_music,play_music,O O O B-music_descriptor O O O O,O O O B-music_genre O O O O
+i want to listen to be more chill by ned vizzini,play,play,play_audiobook,play_music,O O O O O B-audiobook_name I-audiobook_name I-audiobook_name O B-audiobook_author I-audiobook_author,O O O O O O I-song_name I-song_name O B-artist_name I-artist_name
+can you play my favorite audio book of tarzan,play,play,play_audiobook,play_audiobook,O O O O O O O O B-audiobook_name,O O O O O B-media_type O O B-audiobook_name
+resume my audio book from karl pilkington,play,play,play_audiobook,play_audiobook,B-player_setting O O O O B-audiobook_author I-audiobook_author,B-player_setting O B-media_type B-media_type O B-audiobook_name I-audiobook_name
+can you put on the giver,play,iot,play_audiobook,iot_wemo_on,O O B-player_setting I-player_setting B-audiobook_name I-audiobook_name,O O O O O O
+pause the book,play,play,play_audiobook,play_audiobook,B-player_setting O O,O O O
+open audio book history of rome,play,play,play_audiobook,play_audiobook,O O O B-audiobook_name I-audiobook_name I-audiobook_name,O B-media_type O B-audiobook_name I-audiobook_name I-audiobook_name
+resume the playback of a child called it,play,play,play_audiobook,play_audiobook,B-player_setting O O O O O O O,B-player_setting O B-player_setting O O B-audiobook_name I-audiobook_name I-audiobook_name
+play biography of jackie kennedy,play,play,play_audiobook,play_audiobook,O B-audiobook_name I-audiobook_name I-audiobook_name I-audiobook_name,O O O B-person I-person
+open media play jingle bells,play,play,play_music,play_music,O O O B-song_name I-song_name,O O O B-music_genre I-song_name
+olly let's listen to hunt for read october,play,play,play_audiobook,play_audiobook,O O O O B-audiobook_name I-audiobook_name I-audiobook_name I-audiobook_name,O O O O B-audiobook_name I-audiobook_name I-audiobook_name B-audiobook_name
+stop play,play,play,play_audiobook,audio_volume_mute,B-player_setting I-player_setting,O O
+hold,play,play,play_audiobook,play_game,B-player_setting,O
+keep reading the audiobook to me,play,play,play_audiobook,play_audiobook,B-player_setting I-player_setting O B-media_type O O,O O O B-media_type O O
+please continue reading audiobook,play,play,play_audiobook,play_audiobook,O B-player_setting I-player_setting B-media_type,O B-player_setting O B-media_type
+play the romantic songs,play,play,play_music,play_music,O O O O,O O B-music_genre O
+resume born to run,play,play,play_music,play_audiobook,B-player_setting B-song_name I-song_name I-song_name,B-player_setting B-audiobook_name I-audiobook_name I-audiobook_name
+continue the last chapter of the audio book i was listening to,play,play,play_audiobook,play_audiobook,B-player_setting O O O O O B-media_type I-media_type O O O O,B-player_setting O O O O O B-media_type O O O O O
+alexa start from my last session of joes book,play,play,play_audiobook,play_audiobook,O B-player_setting O O O O O B-audiobook_name I-audiobook_name,O O O O O O O B-audiobook_name O
+start audio playback of twilight again,play,play,play_audiobook,play_audiobook,B-player_setting O O O B-audiobook_name O,O O O O B-audiobook_name I-audiobook_name
+play the twilight book,play,play,play_audiobook,play_audiobook,O O B-audiobook_name O,O O B-audiobook_name I-audiobook_name
+my choice to play an audio from first,play,play,play_audiobook,play_audiobook,O O O O O O O O,O O O O O B-media_type O O
+read some more of the daisy goodwin book for me,play,play,play_audiobook,play_audiobook,B-player_setting O O O O B-audiobook_author I-audiobook_author B-media_type O O,O O O O O B-person I-person O O O
+please play the notebook audio,play,play,play_audiobook,play_audiobook,O O B-audiobook_name I-audiobook_name O,O O O B-player_setting B-media_type
+keep playing secret garden,play,play,play_audiobook,play_game,B-player_setting I-player_setting B-audiobook_name I-audiobook_name,O O B-game_name I-game_name
+start chapter five of physics for future presidents,play,play,play_audiobook,play_audiobook,B-player_setting I-player_setting I-player_setting O B-audiobook_name I-audiobook_name I-audiobook_name I-audiobook_name,O O O O B-audiobook_name O O O
+playback tom clancy splinter cell,play,play,play_audiobook,play_audiobook,B-player_setting B-audiobook_author I-audiobook_author B-audiobook_name I-audiobook_name,O B-audiobook_name I-audiobook_name I-audiobook_name I-audiobook_name
+play me a random audio book that has to do with love,play,play,play_audiobook,play_audiobook,O O O O B-media_type I-media_type O O O O O O,O O O O B-media_type O O O O O O O
+keep playing war and peace,play,play,play_audiobook,play_music,B-player_setting I-player_setting B-audiobook_name I-audiobook_name I-audiobook_name,O O B-song_name I-song_name I-song_name
+olly how long should i boil the eggs,cooking,cooking,cooking_recipe,cooking_recipe,O O O O O B-cooking_type O B-food_type,O O O O O O O B-food_type
+how long should i boil an egg,cooking,cooking,cooking_recipe,cooking_recipe,O O O O B-cooking_type O B-food_type,O O O O O O B-food_type
+how long should i boil the egg,cooking,cooking,cooking_recipe,cooking_recipe,O O O O B-cooking_type O B-food_type,O O O O O O B-food_type
+olly how long should i boil the egg,cooking,cooking,cooking_recipe,cooking_recipe,O O O O O B-cooking_type O B-food_type,O O O O O O O B-food_type
+how do i cook butter chicken,cooking,cooking,cooking_recipe,cooking_recipe,O O O B-cooking_type B-food_type I-food_type,O O O O B-food_type I-food_type
+show me a video on cooking fried chicken,cooking,cooking,cooking_recipe,cooking_recipe,O O O B-media_type O O B-food_type I-food_type,O O O O O O B-food_type I-food_type
+what can i substitute butter with,cooking,cooking,cooking_recipe,cooking_recipe,O O O O B-ingredient O,O O O O B-food_type O
+what is the best oven temperature to roast potatoes,cooking,cooking,cooking_recipe,cooking_recipe,O O O O O O O B-cooking_type B-ingredient,O O O O O O O O B-food_type
+what ingredient can be used instead of saffron,cooking,cooking,cooking_recipe,cooking_recipe,O O O O O O O B-ingredient,O O O O O O O B-food_type
+what conducts heat better copper bottomed pots or cast iron,cooking,general,cooking_recipe,general_quirky,O O O O O O O O O O,O O O O O O O O O O
+please search the internet and display the suitable youtube videos for cooking italian foods,cooking,general,cooking_recipe,general_quirky,O O O O O O O O B-media_type I-media_type O O B-food_type O,O O O O O O O O O O O O O O
+cook me some oats,cooking,cooking,cooking_recipe,cooking_recipe,O O O B-ingredient,O O O O
+what is the menu today add some boiled vegetables also to it,cooking,takeaway,cooking_recipe,takeaway_query,O O O O B-date O O B-food_type I-food_type O O O,O O O O B-date O O B-food_type I-food_type O O O
+boiling,cooking,cooking,cooking_recipe,cooking_recipe,B-cooking_type,O
+please tell me how to i bake twelve oatmeal cookies,cooking,cooking,cooking_recipe,cooking_recipe,O O O O O O O O B-food_type I-food_type,O O O O O O O O O I-food_type
+i need a recipe that is from ingredients on my shopping list,cooking,lists,cooking_recipe,lists_createoradd,O O O O O O O O O O B-list_name O,O O O O O O O O O O B-list_name O
+can you give me a recipe for homemade chicken noodle soup,cooking,cooking,cooking_recipe,cooking_recipe,O O O O O O O O B-food_type I-food_type I-food_type,O O O O O O O B-food_type B-food_type I-food_type I-food_type
+tell me how to make a poor boy sandwich,cooking,cooking,cooking_recipe,cooking_recipe,O O O O O O B-food_type I-food_type I-food_type,O O O O O O B-food_type O I-food_type
+baking times for chicken in the oven,cooking,cooking,cooking_recipe,cooking_recipe,O O O B-food_type O O B-device_type,O O O B-food_type O O O
+can you substitute baking soda for baking powder,cooking,cooking,cooking_recipe,cooking_recipe,O O O B-ingredient I-ingredient I-ingredient I-ingredient I-ingredient,O O O B-food_type I-food_type O B-food_type I-food_type
+what should i cook for supper,cooking,cooking,cooking_recipe,cooking_recipe,O O O O O B-event_name,O O O O O B-meal_type
+what is the difference between bake and broil,cooking,cooking,cooking_recipe,cooking_recipe,O O O O O O O O,O O O O O B-food_type O B-food_type
+how long do i cook maccoroni,cooking,cooking,cooking_recipe,cooking_recipe,O O O O O O,O O O O O B-food_type
+recipes that can be cooked in an hour,cooking,cooking,cooking_recipe,cooking_recipe,O O O O O O O O,O O O O O B-time I-time I-time
+search in the web for buying bakeware for muffins,cooking,cooking,cooking_recipe,cooking_recipe,O O O O O O O O O,O O O O O O O O B-food_type
+find the recipe for sambar in cookingforu application,cooking,cooking,cooking_recipe,cooking_recipe,O O O O B-food_type O B-app_name O,O O O O B-food_type O O O
+what ingredients do i need to bake a large cake,cooking,cooking,cooking_recipe,cooking_recipe,O O O O O O B-cooking_type O O B-food_type,O O O O O O B-food_type O O B-food_type
+please play clash of clans,play,play,play_game,play_music,O O B-game_name I-game_name I-game_name,O O B-song_name I-audiobook_name I-audiobook_name
+open saga,play,play,play_game,play_game,O B-game_name,O O
+let's play you'll be the keeper and never change position,play,play,play_game,play_game,O O O O O O O O O O,O O B-game_name I-game_name I-game_name B-game_name O O O O
+play papa pear saga,play,play,play_game,play_music,O B-game_name I-game_name I-game_name,O B-song_name I-song_name I-song_name
+bring up papa pear saga,play,play,play_game,play_game,O O B-game_name I-game_name I-game_name,O O B-person I-person O
+start a competitive crossword for us,play,play,play_game,play_game,O O B-game_name I-game_name O O,O O O O O O
+open parcheese game for you and i,play,play,play_game,play_game,O B-game_name I-game_name O O O O,O B-game_name O O O O O
+what i am going to do today,lists,general,lists_query,general_quirky,O O O O O O B-date,O O O O O O B-date
+remove pencil from stationary,lists,lists,lists_remove,lists_remove,O O O B-list_name,O O O O
+may i have a list of five star hotels in paris,qa,recommendation,qa_factoid,recommendation_locations,O O O O O O B-list_name I-list_name I-list_name O B-place_name,O O O O O O O O B-business_type O B-place_name
+add the post office to my list of errands for saturday,lists,lists,lists_createoradd,lists_createoradd,O O O O O O O O B-list_name O B-date,O O O I-place_name O O O O B-list_name O B-date
+i want to make this week's shopping list,lists,lists,lists_createoradd,lists_createoradd,O O O O O B-time B-list_name O,O O O O B-date I-date B-list_name O
+remove my car payment on my calendar,lists,calendar,lists_remove,calendar_remove,O O O O O O O,O O B-event_name I-event_name O O O
+how the to do list for today,lists,lists,lists_query,lists_query,O O O O O O B-date,O O B-list_name I-list_name O O B-date
+please repeat my shopping list,lists,lists,lists_query,lists_createoradd,O O O B-list_name O,O O O B-list_name O
+remove the old music list,lists,lists,lists_remove,lists_remove,O O B-list_name I-list_name O,O O O O O
+android,lists,news,lists_query,news_query,O,O
+reset my locations list,lists,lists,lists_remove,lists_remove,O O B-list_name O,O O O O
+search the item,lists,lists,lists_createoradd,lists_query,O O O,O O O
+add paav bhaji in menu card,lists,takeaway,lists_createoradd,takeaway_order,O O O O O O,O B-food_type I-food_type O O O
+add detergent to the list of things i need to buy,lists,lists,lists_createoradd,lists_createoradd,O O O O O O B-list_name I-list_name I-list_name I-list_name I-list_name,O O O O O O O O B-list_name B-list_name B-list_name
+add red wine to my shopping list,lists,lists,lists_createoradd,lists_createoradd,O O O O O B-list_name I-list_name,O O O O O B-list_name O
+recite the schedules of the list,lists,lists,lists_query,lists_query,O O B-list_name O O O,O O O O O O
+if there is event of show then remove it,lists,calendar,lists_remove,calendar_remove,O O O O O O O O O,O O O O O O O O O
+replace,lists,calendar,lists_remove,calendar_remove,O,O
+what did i put down already on the walmart list,lists,lists,lists_query,lists_query,O O O O O O O O B-list_name I-list_name,O O O O O O O O B-business_name O
+tell me that list i wrote two days ago,lists,lists,lists_query,lists_query,O O O O O O B-date I-date O,O O O O O O B-date I-date I-date
+create a playlist,lists,play,lists_createoradd,play_music,O O O,O O O
+i don't have enough money to buy the nintendo switch right now can you please remove it on my amazon wishlist,lists,lists,lists_remove,lists_remove,O O O O O O O O O O O O O O O O O O O O O,O O O O O O O O O O O O O O O O O O O B-list_name B-list_name
+take that off there,lists,iot,lists_remove,iot_wemo_off,O O O O,O O O O
+please remove my list of favorite albums,lists,lists,lists_remove,lists_remove,O O O O O B-list_name I-list_name,O O O O O O O
+what groups are listed in my contacts,lists,email,lists_query,email_querycontact,O O O O O O O,O O O O O O O
+delete my to do's for this week,lists,calendar,lists_remove,calendar_remove,O O B-list_name I-list_name O B-date I-date,O O O O O B-date I-date
+on my to dos remove mop kitchen,lists,lists,lists_remove,lists_remove,O O B-list_name I-list_name O O O,O O O O O O B-house_place
+add bob to my list of contacts,lists,email,lists_createoradd,email_addcontact,O B-person O O B-list_name I-list_name I-list_name,O B-person O O O O O
+what are my current list,lists,lists,lists_query,lists_query,O O O B-list_name O,O O O O O
+give me the details on purchase order,lists,takeaway,lists_query,takeaway_query,O O O O O O O,O O O O O O O
+add business contacts to contact list,lists,email,lists_createoradd,email_addcontact,O O O O B-list_name I-list_name,O O O O O O
+open google keep,lists,qa,lists_query,qa_factoid,O B-app_name I-app_name,O O O
+add a wrist watch to the shopping list,lists,lists,lists_createoradd,lists_createoradd,O O O O O O B-list_name I-list_name,O O O O O O B-list_name O
+jump to next podcast,play,play,play_podcasts,play_podcasts,B-player_setting O B-podcast_descriptor I-podcast_descriptor,O O O O
+find an interesting podcast about last pritzker price winners,play,play,play_podcasts,play_podcasts,O O O O O O B-podcast_descriptor I-podcast_descriptor I-podcast_descriptor,O O O O O B-podcast_name B-podcast_name I-podcast_name I-podcast_name
+play next podcast,play,play,play_podcasts,play_podcasts,O B-podcast_descriptor I-podcast_descriptor,O O O
+play next,play,play,play_podcasts,play_music,O O,O O
+play next episode of harry potter by j. k. rowling,play,play,play_audiobook,play_podcasts,O O O O B-audiobook_name I-audiobook_name O B-audiobook_author I-audiobook_author I-audiobook_author,O B-podcast_descriptor I-podcast_descriptor O B-audiobook_name I-audiobook_name O B-person I-person I-person
+play last libertarian podcast,play,play,play_podcasts,play_podcasts,O B-podcast_name I-podcast_name O,O O B-podcast_name O
+play that podcast i was listening to yesterday,play,play,play_podcasts,play_podcasts,O O O O O B-podcast_descriptor I-podcast_descriptor I-podcast_descriptor,O O O O O O O B-date
+play podcast for the philadelphia eagles content,play,play,play_podcasts,play_podcasts,O O O O B-podcast_name I-podcast_name I-podcast_name,O O O O B-podcast_name I-podcast_name O
+show me the best podcast of rock songs having good rating,play,play,play_podcasts,play_podcasts,O O O O O O B-podcast_descriptor I-podcast_descriptor I-podcast_descriptor I-podcast_descriptor I-podcast_descriptor,O O O O O O B-podcast_name I-podcast_descriptor O O O
+play and shuffle all slow music songs,play,play,play_music,play_music,B-player_setting I-player_setting I-player_setting O O O O,O O B-player_setting O B-music_genre O O
+play my most watched podcast,play,play,play_podcasts,play_podcasts,O O B-podcast_descriptor I-podcast_descriptor O,O O O O O
+does allearsnet have a new podcast,play,play,play_podcasts,play_podcasts,O B-person O O O O,O B-podcast_name O O O O
+olly start the podcast over that i started last night,play,play,play_podcasts,play_podcasts,O O O O O O O B-podcast_descriptor I-podcast_descriptor I-podcast_descriptor,O O O O O O O O B-date I-date
+shadi special podcast play it,play,play,play_podcasts,play_podcasts,B-podcast_name I-podcast_name O O O,B-podcast_name I-podcast_descriptor O O O
+go back to previous episode of podcast,play,play,play_podcasts,play_podcasts,O O O B-podcast_descriptor I-podcast_descriptor O O,O O O O I-podcast_descriptor O O
+play duncan trussel's latest podcast,play,play,play_podcasts,play_podcasts,O B-person I-person O O,O B-podcast_name I-person O O
+go backward thirty seconds,play,play,play_podcasts,play_audiobook,B-player_setting I-player_setting B-time I-time,O O O I-time
+vitaly channel,play,play,play_podcasts,qa_factoid,B-radio_name I-radio_name,O O
+start the gilmore guys,play,play,play_podcasts,play_audiobook,O O B-podcast_name I-podcast_name,O O B-audiobook_name I-audiobook_name
+i want to listen to the latest mike and mike podcast,play,play,play_podcasts,play_podcasts,O O O O O O O B-podcast_name I-podcast_name I-podcast_name O,O O O O O O O B-podcast_name O B-person O
+start podcasts on n. f. l.,play,play,play_podcasts,play_podcasts,O O O B-podcast_name I-podcast_name I-podcast_name,O O O B-podcast_name B-podcast_name I-podcast_name
+move to next section,play,play,play_podcasts,play_podcasts,B-player_setting O O O,O O O O
+move on to the next podcast episode,play,play,play_podcasts,play_podcasts,B-player_setting I-player_setting O O B-podcast_descriptor I-podcast_descriptor I-podcast_descriptor,O O O O B-podcast_descriptor O I-podcast_descriptor
+go back to the last episode in this podcast,play,play,play_podcasts,play_podcasts,B-player_setting I-player_setting O O B-podcast_descriptor I-podcast_descriptor O O O,O O O O O I-podcast_descriptor O O O
+i want to listen to a sports podcast,play,play,play_podcasts,play_podcasts,O O O O O O B-podcast_name I-podcast_name,O O O O O O B-podcast_name O
+play the most recent podcast for this american life,play,play,play_podcasts,play_podcasts,O O B-podcast_descriptor I-podcast_descriptor I-podcast_descriptor O O B-podcast_name I-podcast_name,O O O O O O B-podcast_name I-podcast_descriptor I-podcast_descriptor
+resume series podcast,play,play,play_podcasts,play_podcasts,O B-podcast_descriptor I-podcast_descriptor,B-player_setting O O
+play the previous podcast,play,play,play_podcasts,play_podcasts,O O B-podcast_descriptor I-podcast_descriptor,O O O O
+start playing ringcast,play,play,play_podcasts,play_radio,O O B-podcast_name,O O B-radio_name
+play the next show on podcast,play,play,play_podcasts,play_podcasts,O O B-podcast_descriptor I-podcast_descriptor O O,O O B-podcast_descriptor O O O
+next button,play,iot,play_podcasts,iot_wemo_on,O O,O O
+replay my last played podcast,play,play,play_podcasts,play_podcasts,B-player_setting O O O O,O O O O O
+lets hear the united states of anxiety podcast,play,play,play_podcasts,play_podcasts,O O B-podcast_name I-podcast_name I-podcast_name I-podcast_name I-podcast_name O,O O B-podcast_name B-podcast_name I-podcast_name I-podcast_name I-podcast_name O
+i want to see the next podcast available,play,play,play_podcasts,play_podcasts,O O O O O B-podcast_descriptor I-podcast_descriptor O,O O O O O B-podcast_descriptor O O
+hey play my favorite podcast from list,play,play,play_podcasts,play_podcasts,O O O B-podcast_descriptor O O O,O O O O O O O
+add podcast favorites to playlist and start,play,play,play_podcasts,play_podcasts,O O O O O O B-player_setting,O O O O O O O
+start next podcast,play,play,play_podcasts,play_podcasts,B-player_setting O O,O O O
+play all order of the green hand from previous week,play,play,play_podcasts,play_audiobook,O O B-podcast_name I-podcast_name I-podcast_name I-podcast_name I-podcast_name O O O,O O B-audiobook_name I-audiobook_name I-audiobook_name I-audiobook_name I-audiobook_name O B-date I-date
+what's happening around my town,recommendation,recommendation,recommendation_events,recommendation_events,O O O O B-place_name,O O O O O
+is there anything happening on jazz scene around edinburgh,recommendation,recommendation,recommendation_events,recommendation_events,O O O O O B-movie_type I-movie_type O B-place_name,O O O O O B-event_name I-place_name O B-place_name
+what movie can i watch tonight on the theater here in boston,recommendation,recommendation,recommendation_events,recommendation_movies,O B-business_type O O O B-timeofday O O O O O B-place_name,O O O O O B-timeofday O O B-place_name O O B-place_name
+give the list of theaters in the vicinity,recommendation,recommendation,recommendation_locations,recommendation_locations,O O O O B-business_type O O B-place_name,O O O O B-business_type O O O
+give me the list of circus shows going on in the city right now,recommendation,recommendation,recommendation_events,recommendation_events,O O O O O B-event_name O O O O O B-place_name O O,O O O O O B-event_name I-event_name O O O O B-place_name O O
+what movies are showing in cinema today,recommendation,recommendation,recommendation_movies,recommendation_movies,O O O O O B-business_type B-date,O O O O O B-place_name B-date
+what events are happening soon,recommendation,calendar,recommendation_events,calendar_query,O O O O B-time,O O O O O
+olly i'm looking for some dress shows can you find clothing stores within one mile,recommendation,recommendation,recommendation_locations,recommendation_locations,O O O O O B-business_type I-business_type O O O O O B-place_name I-place_name I-place_name,O O O O O O I-event_name O O O B-business_type I-business_type B-place_name I-place_name I-place_name
+please show me marathon nearby me,recommendation,recommendation,recommendation_events,recommendation_events,O O O B-event_name O O,O O O O O O
+do you have any suggestion action movies,recommendation,recommendation,recommendation_movies,recommendation_movies,O O O O O B-movie_type O,O O O O O B-place_name O
+show me reviews of my nearest location food court,recommendation,recommendation,recommendation_locations,recommendation_locations,O O O O O B-place_name I-place_name B-business_type I-business_type,O O O O O O O B-place_name I-place_name
+what shops are round here,recommendation,recommendation,recommendation_locations,recommendation_locations,O O O B-place_name I-place_name,O B-business_type O O O
+swimming,recommendation,general,recommendation_events,general_quirky,B-event_name,O
+olly what are new drama movies opening this weekend,recommendation,recommendation,recommendation_movies,recommendation_events,O O O O B-movie_type O O O B-time,O O O O B-event_name I-event_name O B-date I-date
+what shops are within ten miles,recommendation,recommendation,recommendation_locations,recommendation_locations,O B-business_type O B-place_name I-place_name I-place_name,O B-business_type O B-place_name O I-place_name
+cisco system,recommendation,social,recommendation_movies,social_post,O O,B-business_name O
+where is a good wine bar near me,recommendation,recommendation,recommendation_locations,recommendation_locations,O O O O B-business_type I-business_type O O,O O O O B-business_type B-business_type O O
+which bar has the most affordable drinks near sixth street,recommendation,recommendation,recommendation_locations,recommendation_locations,O O O O O O O O B-place_name I-place_name,O B-business_type O O O B-business_type B-business_type O B-place_name I-place_name
+what's the next event at the library,recommendation,calendar,recommendation_events,calendar_query,O O O O O O B-place_name,O O O O O O B-place_name
+are there any good pizza places around here,recommendation,recommendation,recommendation_locations,recommendation_locations,O O O O B-business_type I-business_type O O,O O O O B-food_type B-business_type O O
+look for shopping mall in sacramento for women's clothes,recommendation,recommendation,recommendation_locations,recommendation_locations,O O B-business_type I-business_type O B-place_name O O O,O O B-business_type B-business_type O B-place_name O B-business_type O
+movies with good reviews,recommendation,general,recommendation_movies,general_quirky,O O O O,O O O O
+is there a sporting event tomorrow in chicago,recommendation,recommendation,recommendation_events,recommendation_events,O O O B-event_name I-event_name B-date O B-place_name,O O O B-event_name O B-date O B-place_name
+search for local shops,recommendation,recommendation,recommendation_locations,recommendation_locations,O O O O,O O O B-business_type
+what's going on around here this weekend,recommendation,news,recommendation_events,news_query,O O O O O B-date I-date,O O O O O B-date I-date
+olly i need a drink,iot,general,iot_coffee,general_quirky,O O O O O,O O O O O
+i need a drink,iot,general,iot_coffee,general_quirky,O O O O,O O O O
+what are some theme parks nearby,recommendation,recommendation,recommendation_events,recommendation_locations,O O O B-event_name I-event_name O,O O O B-business_type I-place_name O
+where is the nearest walmart,recommendation,transport,recommendation_locations,recommendation_locations,O O O O B-business_name,O O O O B-business_name
+tell me all events for today in my city,recommendation,calendar,recommendation_events,calendar_query,O O O O O B-date O O O,O O O O O B-date O B-place_name I-place_name
+olly please list the best clothing shops near me,recommendation,recommendation,recommendation_locations,recommendation_locations,O O O O O B-business_type I-business_type O O,O O O O O B-business_type B-business_type O O
+find gluten free bakery near me,recommendation,recommendation,recommendation_locations,recommendation_locations,O B-business_type I-business_type I-business_type O O,O B-business_name I-business_name B-business_type O O
+i need to find a gift what stores are within a one mile radius,recommendation,recommendation,recommendation_locations,recommendation_locations,O O O O B-business_type I-business_type O B-business_type O B-place_name I-place_name I-place_name I-place_name I-place_name,O O O O O O O O O O O O O O
+what's happening around town,recommendation,recommendation,recommendation_events,recommendation_events,O O B-place_name I-place_name,O O O B-place_name
+when does panama city mall open,recommendation,recommendation,recommendation_events,recommendation_locations,O O B-business_name I-business_name I-business_name O,O O B-place_name I-place_name I-place_name O
+refer local current events,recommendation,recommendation,recommendation_events,recommendation_events,O B-event_name I-event_name I-event_name,O O O O
+kung fu panda three,recommendation,play,recommendation_movies,play_game,B-movie_name I-movie_name I-movie_name I-movie_name,B-game_name I-game_name I-game_name I-game_name
+i need to go to dundee at five am on sunday by train,transport,transport,transport_ticket,transport_ticket,O O O O O B-place_name O B-time I-time O B-date O B-transport_type,O O O O O B-place_name O B-time I-time O B-date O O
+olly book me a ticket to paris on eurostar this weekend,transport,transport,transport_ticket,transport_ticket,O O O O O O B-place_name O B-transport_name B-date I-date,O O O O O O B-place_name O B-place_name B-date I-date
+can you book an uber after i left for office,transport,transport,transport_taxi,transport_taxi,O O O O B-transport_agency O O O O O,O O O O B-transport_agency O O O O B-place_name
+google train tickets to washington d. c.,transport,transport,transport_ticket,transport_query,O B-transport_type O O B-place_name I-place_name I-place_name,O B-transport_type O O B-place_name I-place_name I-place_name
+please purchase a train ticket for this weekend,transport,transport,transport_ticket,transport_ticket,O O O B-transport_type O O O B-time,O O O B-transport_type O O B-date I-date
+what is the traffic like on my commute home at five,transport,transport,transport_query,transport_traffic,O O O O O O O O B-place_name O B-time,O O O O O O O O O O B-time
+tell me about city traffic,transport,transport,transport_traffic,transport_traffic,O O O B-place_name O,O O O O O
+california,transport,recommendation,transport_query,general_quirky,B-place_name,B-place_name
+new york,transport,recommendation,transport_query,recommendation_events,B-place_name I-place_name,B-place_name I-place_name
+book a first class ticket in the next train to miami,transport,transport,transport_ticket,transport_ticket,O O B-transport_descriptor I-transport_descriptor O O O O B-transport_type O B-place_name,O O O O O O O O B-transport_type O B-place_name
+call yellow cab,transport,transport,transport_taxi,transport_taxi,O B-transport_type I-transport_type,O B-transport_agency B-transport_type
+book a train ticket for one one way for this tuesday at nine am,transport,transport,transport_ticket,transport_ticket,O O B-transport_type O O O B-transport_descriptor I-transport_descriptor O O B-date O B-time I-time,O O B-transport_type O O O O O O O B-date O B-time I-time
+can you please book train tickets for two for this friday,transport,transport,transport_ticket,transport_ticket,O O O O B-transport_type O O O O O B-date,O O O O B-transport_type O O O O B-date B-date
+check time of ten thousand eight hundred and eighty seven train from luni station on tuesday,transport,transport,transport_query,transport_query,O O O B-transport_name I-transport_name I-transport_name I-transport_name I-transport_name I-transport_name I-transport_name B-transport_type O B-place_name I-place_name O B-date,O O O B-time I-time I-time I-time I-time I-time I-place_name B-transport_type O B-place_name I-place_name O B-date
+book a train ticket from baltimore maryland to new york new york,transport,transport,transport_ticket,transport_ticket,O O B-transport_type O O B-place_name I-place_name O B-place_name I-place_name I-place_name I-place_name,O O B-transport_type O O B-place_name I-place_name O I-place_name I-place_name I-place_name I-place_name
+what is the commute time to the theater,transport,transport,transport_query,transport_traffic,O O O O O O O B-place_name,O O O O O O O B-place_name
+uber me to the airport,transport,transport,transport_taxi,transport_taxi,B-transport_agency O O O B-place_name,B-transport_type O O O B-place_name
+how do i get home from here,transport,transport,transport_query,transport_query,O O O O B-place_name O O,O O O O O O O
+i need a ride home,transport,transport,transport_taxi,transport_taxi,O O O O B-place_name,O O O B-transport_type O
+book me a cab going to location,transport,transport,transport_taxi,transport_taxi,O O O B-transport_type O O O,O O O B-transport_type O O B-place_name
+i need to get a ticket via train to orlando from hwood,transport,transport,transport_ticket,transport_ticket,O O O O O O O B-transport_type O B-place_name I-place_name I-place_name,O O O O O O O B-transport_type O B-place_name O B-place_name
+i need to get a ticket via train to orlando from hwood,transport,transport,transport_ticket,transport_ticket,O O O O O O O B-transport_type O B-place_name I-place_name I-place_name,O O O O O O O B-transport_type O B-place_name O B-place_name
+how is traffic in city,transport,transport,transport_traffic,transport_traffic,O O O O O,O O O O B-place_name
+navigation search,transport,qa,transport_query,qa_factoid,O O,O O
+call an uberpool to get me at long island bar,transport,transport,transport_taxi,transport_taxi,O O B-transport_type O O O O B-place_name I-place_name I-place_name,O O B-transport_agency O O O O B-place_name I-place_name I-place_name
+train times from near me to location,transport,transport,transport_query,transport_query,O O O O O O B-place_name,B-transport_type O O O O O O
+where is the public library,transport,qa,transport_query,qa_factoid,O O O B-business_type I-business_type,O O O O O
+please book a ticket of rajdhani express train from jaipur,transport,transport,transport_ticket,transport_ticket,O O O O O B-transport_name I-transport_name B-transport_type O B-place_name,O O O O O O B-transport_type B-transport_type O B-place_name
+how do i get to the mall,transport,transport,transport_query,transport_query,O O O O O B-place_name I-place_name,O O O O O O B-place_name
+how is the traffic at the moment,transport,transport,transport_traffic,transport_traffic,O O O O O B-time I-time,O O O O O O O
+what is the timing of bagmati express,transport,transport,transport_query,transport_query,O O O O O B-transport_name I-transport_name,O O O O O B-place_name O
+book a train ticket weekend of the twenty sixth phoenix to los angeles,transport,transport,transport_ticket,transport_ticket,O O B-transport_type O B-date I-date I-date I-date I-date B-place_name O B-place_name I-place_name,O O B-transport_type O B-date O O I-date I-date I-date O B-place_name I-place_name
+look up the map to stores near me,transport,recommendation,transport_query,recommendation_locations,O O O O O B-business_type O O,O O O O O B-business_type O O
+what is the nearest pizza shop,recommendation,recommendation,recommendation_locations,recommendation_locations,O O O O B-business_type I-business_type,O O O O B-food_type B-business_type
+i want sweet potato pie from a local bakery,lists,cooking,lists_createoradd,cooking_recipe,O O O O O O O O O,O O B-food_type I-food_type I-food_type O O O B-business_type
+i want tickets to the sold out concert on saturday night,general,calendar,general_quirky,calendar_set,O O O O O O O O O B-date B-timeofday,O O O O O O O B-event_name O B-date B-time
+can you create a sugar free diet for me and create a shopping list for the ingredients,general,lists,general_quirky,lists_createoradd,O O O O O O O O O O O O O O O O O,O O O O O O O O O O O O B-list_name O O O O
+why isn't adam sandler funny,qa,general,qa_factoid,general_quirky,O O B-person I-person O,O O B-person I-person O
+what is robin williams birthday,qa,qa,qa_factoid,qa_factoid,O O B-person I-person O,O O B-person I-person B-event_name
+tell me billy crytals address,qa,email,qa_factoid,email_querycontact,O O B-person I-person O,O O B-person I-person B-personal_info
+drive the car and bring my friends over,general,general,general_quirky,general_quirky,O O O O O O O O,O O O O O O B-relation O
+tell me all about hurricane,qa,general,qa_definition,general_quirky,O O O O B-definition_word,O O O O B-news_topic
+can you cook something special for me and my wife,general,cooking,general_quirky,cooking_recipe,O O O O O O O O O B-relation,O O O O O O O O O B-relation
+do you know jessica snout's phone number,qa,email,qa_factoid,email_querycontact,O O O B-person I-person O O,O O O B-person I-person B-personal_info I-personal_info
+remind me to contact old friends that i have not talked with in six months before they pass,calendar,calendar,calendar_set,calendar_set,O O O O O O O O O O O O O O O O O O,O O O O B-relation B-relation O O O O O O O I-date I-date O I-date I-time
+check for all the movie theater prices and availability for a newly released movie in my location,recommendation,recommendation,recommendation_movies,recommendation_movies,O O O O O O O O O O O O O O O O O,O O O O O B-business_type O O O O O O O O O O O
+i need to talk to mom,general,email,general_quirky,email_querycontact,O O O O O B-relation,O O O O O B-relation
+tell me how are the results of assembly elections in delhi going to come out,news,news,news_query,news_query,O O O O O O O O O O B-place_name O O O O,O O O O O O O B-news_topic I-news_topic O B-place_name O O O O
+do you know math,qa,qa,qa_maths,qa_factoid,O O O O,O O O O
+location,qa,calendar,qa_definition,calendar_set,O,O
+what is the quickest way to my work downtown without hitting any traffic,transport,transport,transport_query,transport_traffic,O O O O O O O O B-place_name O O O O,O O O O O O O B-place_name I-place_name O O O O
+what does priyanka chopra do to look beautiful,general,qa,general_quirky,qa_factoid,O O B-person I-person O O O O,O O B-person I-person O O O O
+where does kate middleton buy her kids clothes,general,qa,general_quirky,qa_factoid,O O B-person I-person O O O O,O O B-person I-person O O B-relation O
+why does sofia vergara look so young,general,qa,general_quirky,qa_factoid,O O B-person I-person O O O,O O B-person I-person O O O
+what was george eliot's first november el,qa,qa,qa_factoid,qa_factoid,O O B-person I-person O O O,O O B-person I-person O I-date O
+who is celebrity,qa,general,qa_factoid,general_quirky,O O O,O O O
+what does celebrity do,qa,general,qa_factoid,general_quirky,O O O O,O O O O
+can you make dinner for me,general,iot,general_quirky,iot_coffee,O O O O O O,O O O B-meal_type O O
+alexa i've got dollars for the month how much can i spend every day this month,qa,qa,qa_maths,qa_factoid,O O O O O O O O O O O O B-general_frequency I-general_frequency B-date I-date,O O O O O O O O O O O O B-general_frequency I-general_frequency B-date I-date
+i want to know what supermarket near me has the best price on gluten free bread,recommendation,recommendation,recommendation_locations,recommendation_locations,O O O O O B-business_type O O O O O O O B-food_type I-food_type I-food_type,O O O O O B-business_type O O O O O O O O O O
+i would like it to be able to compute answer from search results like wolfram alpha does,general,qa,general_quirky,general_quirky,O O O O O O O O O O O O O O O O O,O O O O O O O O O O O O O O O O O
+when will the world end,general,qa,general_quirky,qa_factoid,O O O O O,O O O O O
+what time are the hockey games tonight,general,calendar,general_quirky,calendar_query,O O O O O O B-timeofday,O O O O B-event_name I-event_name B-timeofday
+send a funny message to all of my friends,social,social,social_post,social_post,O O O O O O O O O,O O O O O O O O B-relation
+what store is having sales tomorrow,general,recommendation,general_quirky,recommendation_events,O O O O O B-date,O B-business_type O O O B-date
+what causes osteoperosis,general,qa,general_quirky,qa_factoid,O O O,O O O
+tell me what the product of eighteen and thirty one is,qa,qa,qa_maths,qa_definition,O O O O O O O O O O O,O O O O O O O O O O O
+can you show me a list of all my recent commands,general,lists,general_quirky,lists_query,O O O O O O O O O O O,O O O O O O O O O O O
+please give me the winning lottery numbers for this weekend,general,calendar,general_quirky,calendar_query,O O O O O O O O B-date I-date,O O O O B-event_name I-event_name O O B-date I-date
+why is the earth round,general,qa,general_quirky,qa_factoid,O O O O O,O O O O O
+wanna netflix and chill,general,play,general_quirky,play_podcasts,O O O O,O O O O
+where was will ferrell seen last night,general,qa,general_quirky,qa_factoid,O O B-person I-person O B-date I-date,O O B-person I-person O B-date I-date
+i'd like you to turn turn on the t. v.,iot,iot,iot_wemo_on,iot_wemo_on,O O O O O O O O O O,O O O O O O O O O I-device_type
+how tall is mount everest,qa,qa,qa_factoid,qa_factoid,O O O O B-place_name,O O O B-place_name I-place_name
+what is the largest desk,qa,qa,qa_definition,qa_definition,O O O B-definition_word I-definition_word,O O O O O
+where's the closest zoo to where i'm at,recommendation,recommendation,recommendation_locations,recommendation_locations,O O O O O O O O,O O O B-business_type O O O O
+what is arnold schwarzenegger's birthday,qa,qa,qa_factoid,qa_factoid,O O B-person I-person O,O O B-person I-person B-event_name
+what is the increase in stock value over the past week of disney,qa,qa,qa_stock,qa_stock,O O O O O O O O O O O O B-business_name,O O O O O O O O O B-date I-time O B-business_name
+what are pounds worth right now,qa,qa,qa_currency,qa_factoid,O O B-currency_name O O O,O O O O O O
+has the dollar rate increased,qa,qa,qa_currency,qa_currency,O O O O O,O O B-currency_name O O
+what is an electronic emissions system,qa,qa,qa_definition,qa_definition,O O O B-definition_word I-definition_word I-definition_word,O O O B-definition_word O O
+what's the exchange rates between u. s. a. and china,qa,qa,qa_currency,qa_currency,O O O O O B-place_name I-place_name I-place_name O B-place_name,O O O O O B-currency_name I-currency_name I-currency_name O B-currency_name
+what's the currency exchange rate for china,qa,qa,qa_currency,qa_currency,O O O O O O B-place_name,O O O O O O B-currency_name
+what's the currency exchange rate for china,qa,qa,qa_currency,qa_currency,O O O O O O B-place_name,O O O O O O B-currency_name
+please pull up the wikipedia article on glass blowing,general,general,general_quirky,general_quirky,O O O O O O O O O,O O O O O O O B-news_topic I-definition_word
+what's a parsec,qa,qa,qa_factoid,qa_definition,O O O,O O B-definition_word
+what is the exchange rate between us and mexico,qa,qa,qa_currency,qa_currency,O O O O O O B-currency_name O B-currency_name,O O O O O O B-currency_name O B-place_name
+what is the exchange rate for mexico money,qa,qa,qa_currency,qa_currency,O O O O O O B-currency_name O,O O O O O O B-place_name O
+please google location and information of mount rushmore,qa,qa,qa_factoid,qa_factoid,O O O O O O O O,O O O O O O B-place_name I-place_name
+what is the temperature in indianapolis indiana,qa,weather,qa_factoid,weather_query,O O O O O B-place_name I-place_name,O O O B-weather_descriptor O B-place_name I-place_name
+the definition of life,qa,general,qa_definition,general_quirky,O O O B-definition_word,O O O O
+tell me a place that has snow now,general,weather,general_quirky,weather_query,O O O O O O O O,O O O O O O B-weather_descriptor O
+suffering consequences,qa,general,qa_definition,general_quirky,O O,O O
+consequences to actions,qa,general,qa_definition,general_quirky,O O O,O O O
+how much is the average house,qa,qa,qa_factoid,general_quirky,O O O O O O,O O O O O O
+what are the coordinates of the equator,qa,qa,qa_factoid,qa_factoid,O O O O O B-place_name I-place_name,O O O O O O O
+if a pencil cost four dollars and a book ten dollars cost how much i should pay if i buy two pencil and three book,qa,general,qa_maths,general_quirky,O O O O O O O O O O O O O O O O O O O O O O O O O,O O O O O O O O O O O O O O O O O O O O O O O O O
+what is the location of moldova,qa,qa,qa_factoid,qa_factoid,O O O O O O,O O O O O B-place_name
+how tall is hulk hogan,qa,qa,qa_factoid,qa_factoid,O O O O O,O O O B-person I-person
+one dolla equals how much inr,qa,qa,qa_currency,qa_maths,O B-currency_name O O O B-currency_name,O O O O O O
+where are the rocky mountains,qa,qa,qa_factoid,qa_factoid,O O O O O,O O B-place_name I-place_name I-place_name
+what's jlo up to,general,qa,general_quirky,qa_factoid,O B-person O O,O B-person O O
+where are pyramids located,qa,qa,qa_factoid,qa_factoid,O O B-place_name O,O O O O
+show geographic details of pyramids,qa,qa,qa_factoid,qa_factoid,O O O O B-place_name,O O O O O
+show bio of rihana,qa,general,qa_factoid,general_quirky,O O O B-artist_name,O O O B-person
+details on person,qa,general,qa_factoid,general_quirky,O O O,O O O
+how can you get basalt,general,qa,general_quirky,qa_definition,O O O O O,O O O O O
+hey what's a book,qa,general,qa_definition,qa_definition,O O O B-definition_word,O O O O
+what is leonardo dicaprio's networth,qa,qa,qa_factoid,qa_factoid,O O O O O,O O B-person O O
+what is the size of the united states,qa,qa,qa_factoid,qa_factoid,O O O O O O O O,O O O O O O B-place_name I-place_name
+tell me about economy and g. d. p. about india versus china,general,news,general_quirky,news_query,O O O O O O O O O B-place_name O B-place_name,O O O O O B-news_topic O O O B-place_name O B-place_name
+what is a hypothesis,qa,qa,qa_definition,qa_definition,O O O B-definition_word,O O O O
+can many seashells did sally sell by the seashore,qa,general,qa_factoid,general_quirky,O O O O O O O O O,O O O O O O O O O
+will there be a world war four,general,qa,general_quirky,qa_factoid,O O O O O O O,O O O O O O O
+how much will be the world population after twenty years,general,qa,general_quirky,qa_factoid,O O O O O O O O O O,O O O O O O O O O O
+tell me the profession of celebrity,qa,general,qa_factoid,general_quirky,O O O O O O,O O O O O O
+what is the deepest point on earth,qa,qa,qa_factoid,qa_factoid,O O O O O O O,O O O O O O B-place_name
+describe the new football game rules,general,general,general_quirky,general_quirky,O O O O O O,O O O B-definition_word O O
+is angeline having a new movie this year,qa,recommendation,qa_factoid,recommendation_events,O B-person O O O O O O,O B-person O O O O B-date I-date
+find route,qa,transport,qa_factoid,transport_query,O O,O O
+can we go to sun,general,transport,general_quirky,transport_query,O O O O O,O O O O B-place_name
+please summarize the latest george r. r. martin ice and fire book,qa,qa,qa_factoid,qa_factoid,O O O O O O O O O O O O,O O O O B-person I-person I-person I-person I-audiobook_name I-audiobook_name I-audiobook_name O
+make a list about selena gomez concert schedule,lists,lists,lists_createoradd,lists_query,O O O O B-person I-person O O,O O O O B-person I-person B-event_name O
+tell me if global warming is true,general,weather,general_quirky,weather_query,O O O O O O O,O O O O O O O
+explain how is u. s. a. better than other countries,general,qa,general_quirky,qa_factoid,O O O B-place_name I-place_name I-place_name O O O O,O O O B-place_name I-place_name I-place_name O O O O
+what is the largest active volcano on earth,qa,qa,qa_factoid,qa_factoid,O O O O O O O B-place_name,O O O O O O O O
+how long will it take to travel to japan from south korea,qa,transport,qa_factoid,transport_query,O O O O O O O O B-place_name O B-place_name I-place_name,O O O O O O O O B-place_name O B-place_name I-place_name
+give me the description of a television circuit,qa,qa,qa_definition,qa_definition,O O O O O O B-definition_word I-definition_word,O O O O O O B-definition_word B-definition_word
+give me the description of a smartphone circuit,qa,qa,qa_definition,qa_definition,O O O O O O B-definition_word I-definition_word,O O O O O O B-definition_word B-definition_word
+for how many years was abraham lincoln president of united states,qa,qa,qa_factoid,qa_factoid,O O O O O O O O O O O,O O O O O B-person I-person O O B-place_name I-place_name
+tell me about the cheapest flight fares to nj today,transport,transport,transport_ticket,transport_query,O O O O O O O O B-place_name B-date,O O O O O O O O B-place_name B-date
+describe item xy,qa,qa,qa_definition,qa_definition,O O O,O O B-definition_word
+can you tell me about animal kingdom in amazon forest,general,qa,general_quirky,qa_factoid,O O O O O O O O B-place_name I-place_name,O O O O O B-place_name I-place_name O B-place_name I-place_name
+what exactly is a resin tooth filling,qa,qa,qa_definition,qa_definition,O O O O B-definition_word I-definition_word I-definition_word,O O O O B-definition_word I-definition_word O
+describe the heart stone card game,qa,qa,qa_definition,qa_definition,O O B-definition_word I-definition_word I-definition_word I-definition_word,O O B-game_name I-game_name B-game_name O
+what is the difference between roman and grigorean calendar,qa,datetime,qa_factoid,datetime_query,O O O O O O O O O,O O O O O O O O O
+what is the make up of the chair,qa,qa,qa_factoid,qa_definition,O O O O O O O O,O O O O O O O O
+where is a walking trail near me,recommendation,recommendation,recommendation_locations,recommendation_events,O O O O O O O,O O O O O O O
+his hardword is properly quead,general,qa,general_quirky,qa_definition,O O O O O,O O O O O
+to compare in people,qa,general,qa_factoid,general_quirky,O O O O,O O O O
+what are the climatic conditions in that area,qa,weather,qa_factoid,weather_query,O O O O O O O O,O O O O O O O O
+what is the least tornado prone state in the entire us,qa,qa,qa_factoid,qa_factoid,O O O O O O O O O O B-place_name,O O O O O O O O O O O
+please describe that object for me,qa,qa,qa_definition,qa_definition,O O O O O O,O O O B-definition_word O O
+in which field does that person excel in,qa,general,qa_factoid,general_quirky,O O O O O O O O,O O O O O O O O
+where was president madison born,qa,qa,qa_factoid,qa_factoid,O O O B-person O,O O B-person I-person O
+look up,general,qa,general_quirky,qa_factoid,O O,O O
+internet please,general,qa,general_quirky,qa_factoid,O O,O O
+iphone seven description,qa,qa,qa_definition,qa_definition,B-definition_word I-definition_word O,B-definition_word O O
+how much is one american dollars worth in england,qa,qa,qa_currency,qa_currency,O O O O B-currency_name I-currency_name O O B-currency_name,O O O O O O O O B-place_name
+how much is one dollar in pounds,qa,qa,qa_currency,qa_currency,O O O O B-currency_name O B-currency_name,O O O O O O O
+which pole is colder south or north,qa,qa,qa_factoid,qa_factoid,O O O O O O O,O O O O B-place_name O O
+what is the geology of this location,general,qa,general_quirky,qa_factoid,O O O O O O O,O O O O O O O
+how many euros can i get for one dollar,qa,qa,qa_currency,qa_currency,O O B-currency_name O O O O O B-currency_name,O O O O O O O O B-currency_name
+check my social networks,social,social,social_query,social_query,O O B-media_type I-media_type,O O O O
+can you upload my latest selfie in my facebook account,social,social,social_post,social_post,O O O O O O O O B-media_type I-media_type,O O O O O O O O B-media_type O
+do i have any new friend requests,social,calendar,social_query,calendar_query,O O O O O O O,O O O O O B-relation O
+birthday wishes,social,calendar,social_post,calendar_set,B-event_name O,B-event_name O
+wedding wishes,social,general,social_post,general_quirky,B-event_name O,B-event_name O
+share in friends post,social,social,social_post,social_post,O O O O,O O B-business_name I-business_name
+post in twitter my visit to japan,social,social,social_post,social_post,O O B-media_type O O O O,O O B-media_type O O O B-place_name
+what going on,social,recommendation,social_query,recommendation_events,O O O,O O O
+new updates,social,news,social_query,news_query,O O,O O
+give me my facebook update every three hours,social,social,social_query,social_query,O O O B-media_type O B-general_frequency I-general_frequency I-general_frequency,O O O B-media_type O B-general_frequency I-time I-time
+what is the trending now,news,news,news_query,news_query,O O O O O,O O O B-news_topic O
+show me latest notifications,social,calendar,social_query,calendar_query,O O O O,O O O O
+my trip to goa photo post it on instagram,social,social,social_post,social_post,O O O O O O O O B-media_type,O O O B-place_name O O O O B-media_type
+post this to my facebook l. o. l.,social,social,social_post,social_post,O O O O B-media_type O O O,O O O O B-media_type B-business_name I-business_name I-business_name
+post a new status on facebook saying that i am enjoying the nice weather,social,social,social_post,social_post,O O O O O B-media_type O O O O O O B-weather_descriptor I-weather_descriptor,O O O O O B-media_type O O O O O O O O
+has anyone follow me today on twitter today,social,social,social_query,social_query,O O O O O O B-media_type B-date,O O O O B-date O B-media_type B-date
+do i have any notifications from social media,calendar,social,calendar_query,social_query,O O O O O O O O,O O O O O O O O
+i want to thank everyone for the birthday wishes,social,general,social_post,general_quirky,O O O O O O O B-event_name O,O O O O O O O B-event_name O
+anything new on insta,social,email,social_query,email_query,O O O B-media_type,O O O O
+who is doing facebook live right now,social,social,social_query,social_query,O O O B-media_type I-media_type O O,O O O B-media_type O O O
+open twitter send message,social,social,social_post,social_post,O B-business_name O O,O B-media_type O O
+get me a person a. s. a. p.,social,general,social_post,general_quirky,O O O O O O O O,O O O O O O O O
+two thumbs down at companyname,social,social,social_post,social_post,O O O B-business_name I-business_name,O O O O B-business_name
+send a tweet about sonys volume issues,social,social,social_post,social_post,O O B-media_type O B-business_name O O,O O B-media_type O O O O
+tweet at united airlines i'm angry you lost my bags,social,social,social_post,social_post,B-media_type O B-business_name I-business_name O O O O O O,B-media_type B-business_name B-business_name I-business_name O O O O O O
+tweet a complaint for the online bookstore,social,social,social_post,social_post,B-media_type O O O O B-business_name I-business_name,B-media_type O O O O O O
+clear out the problem,general,lists,general_quirky,calendar_remove,O O O O,O O O O
+open gallery post picture name,social,social,social_post,social_post,O B-media_type O O O,O I-business_name I-business_name O O
+tweet complain at comcast,social,social,social_post,social_post,B-media_type O B-business_name I-business_name,B-media_type O O B-business_name
+tweet complain at comcast,social,social,social_post,social_post,B-media_type O B-business_name I-business_name,B-media_type O O B-business_name
+post a tweet as follows very bad follow up by a. b. c. company not satisfied in my account,social,social,social_post,social_post,O O B-media_type O O O O O O O O O O O O O O O O,O O B-media_type O O O O O O O B-business_name I-business_name I-business_name O O O O O O
+tweet mcdonald's down reseda has terrible service,social,social,social_post,social_post,B-media_type O O O O O O,B-media_type B-business_name O O O O O
+tweet complaint to at,social,social,social_post,social_post,B-media_type O O O,B-media_type O O B-business_name
+tweet to google costumer service my new nexus phone stop working help please,social,social,social_post,social_post,B-media_type O O O O O O O O O O O O,B-media_type O B-business_name I-business_name I-business_name O O O O O O O O
+post my latest entry to twitter at n.s.a.,social,social,social_post,social_post,O O O O O B-media_type B-business_name I-business_name,O O O O O B-media_type O B-business_name
+tweet to apple about non receipt of iphone i sent for repairs last week,social,social,social_post,social_post,B-media_type O B-business_name O O O O O O O O O O O,B-media_type O B-business_name O O O O O O O O O B-date I-date
+hello my item which i bought from some one has gone out of order,social,lists,social_post,lists_createoradd,O O O O O O O O O O O O O O,O O O O O O O O O O O O O O
+add this person's email,email,email,email_addcontact,email_addcontact,O O O B-personal_info,O O O O
+where seth lives,email,qa,email_querycontact,qa_factoid,O B-person B-personal_info,O B-person O
+here is a new email address to be added to the contacts,email,email,email_sendemail,email_addcontact,O O O O O O O O O O O O,O O O O O O O O O O O O
+topic,email,news,email_query,news_query,O,O
+how its come to us,email,email,email_sendemail,email_query,O O O O O,O O O O O
+how we can get credit,email,general,email_sendemail,general_quirky,O O O O O,O O O O O
+send a reply if it is very important,email,email,email_query,email_sendemail,O O O O O O O O,O O O O O O O O
+if it is from a very familiar place mark it as important,email,general,email_query,general_quirky,O O O O O O O O O O O O,O O O O O O O O O O O O
+what is the email address for tessa,email,email,email_querycontact,email_querycontact,O O O B-personal_info I-personal_info O B-person,O O O B-personal_info B-personal_info O B-person
+send an email to rohit saying i am busy tomorrow,email,email,email_sendemail,email_sendemail,O O O O B-person O O O O O,O O O O B-person O O O O B-date
+check outlook,email,weather,email_query,calendar_query,O O,O O
+this new email should be added to my contact,email,email,email_sendemail,email_addcontact,O O O O O O O O O,O O O O O O O O O
+remember this email,email,email,email_addcontact,email_query,O O O,O O O
+have any emails arrived in the last fifteen minutes,email,email,email_query,email_query,O O O O O O O B-time I-time,O O O O O O B-time I-time I-time
+any mail from amazon today,email,email,email_query,email_query,O O O B-person B-date,O O O B-business_name B-date
+open contacts,email,email,email_addcontact,email_querycontact,O O,O O
+is it anyone i knows birthday this month,email,calendar,email_querycontact,calendar_query,O O O O O B-event_name B-date I-date,O O O O O B-event_name B-date I-date
+send email to joe at a. o. l. dot com,email,email,email_sendemail,email_sendemail,O O O B-email_address I-email_address I-email_address I-email_address I-email_address I-email_address I-email_address,O O O B-person I-email_address I-email_address I-email_address I-email_address I-email_address I-email_address
+how do i reach sarah,email,email,email_querycontact,email_querycontact,O O O B-personal_info B-person,O O O O B-person
+initiate polling for new email,email,email,email_query,email_sendemail,O O O O O,O O O O O
+please send an email to cassy who is there on my family and friend list,email,email,email_sendemail,email_sendemail,O O O O O B-person O O O O O B-relation O B-relation O,O O O O O B-person O O O O O B-relation I-list_name I-list_name O
+did i email tom on the subject of gun control,email,email,email_query,email_query,O O O B-person O O O O O O,O O O B-person O O O O O I-news_topic
+add new email to my contacts macs at gmail dot com,email,email,email_addcontact,email_addcontact,O O O O O O B-email_address I-email_address I-email_address I-email_address I-email_address,O O O O O O I-email_address I-email_address I-email_address I-email_address I-email_address
+new message to newmail at gmail dot com,email,email,email_sendemail,email_sendemail,O O O B-email_address I-email_address I-email_address I-email_address I-email_address,O O O I-email_address I-email_address I-email_address I-email_address I-email_address
+do i have any new emails from my contact q.,email,email,email_query,email_query,O O O O O O O O O O,O O O O O O O O O B-person
+add a new email for julie smith,email,email,email_sendemail,email_addcontact,O O O O O B-person I-person,O O O O O B-person I-person
+i need to add a new email to my contacts,email,email,email_sendemail,email_addcontact,O O O O O O O O O O,O O O O O O O O O O
+can you tell me the contact information of jo,email,email,email_querycontact,email_querycontact,O O O O O O O O O,O O O O O O O O B-person
+check mom's number,email,email,email_querycontact,email_querycontact,O B-relation O,O B-relation I-personal_info
+make a call to,email,email,email_querycontact,general_quirky,O O O O,O O O O
+send a reply to mike with the answer four hundred and thirty from his email he sent this morning,email,email,email_sendemail,email_sendemail,O O O O B-person O O O O O O O O O O O O O B-timeofday,O O O O B-person O O O B-time I-time I-time I-time O O O O O O B-timeofday
+respond to my bosses email with the word that i will be in at four in the evening,email,email,email_sendemail,email_sendemail,O O O B-relation O O O O O O O O O O O O O O,O O O B-relation O O O O O O O O O O B-time O O B-timeofday
+does my company worker have a home phone number,email,email,email_querycontact,email_querycontact,O O B-relation I-relation O O B-personal_info I-personal_info I-personal_info,O O B-relation B-relation O O B-personal_info B-personal_info I-personal_info
+i just got an email from bill i need to answer it right now,email,email,email_sendemail,email_sendemail,O O O O O O O O O O O O O O,O O O O O O B-person O O O O O O O
+what does the email say that was sent thirty minutes ago from mom,email,email,email_query,email_query,O O O O O O O O B-time I-time O O B-relation,O O O O O O O O O O O O B-relation
+has ben got in touch,email,email,email_query,email_querycontact,O B-person O O O,O B-person O O O
+add lowes hardware to my contact emails located in cleveland ohio,email,email,email_addcontact,email_addcontact,O O O O O O O O O B-place_name I-place_name,O B-business_name I-business_name O O O O O O B-place_name I-place_name
+locate the email to giant eagle and put it into my contact list,email,email,email_addcontact,email_addcontact,O O O O B-business_name I-business_name O O O O O B-list_name I-list_name,O O O O B-person I-person O O O O O O O
+send an email to juanpedro at gmail dot com,email,email,email_sendemail,email_sendemail,O O O O B-email_address I-email_address I-email_address I-email_address I-email_address,O O O O B-person I-email_address I-email_address I-email_address I-email_address
+add this email address to my contacts and send an email to,email,email,email_addcontact,email_sendemail,O O O O O O O O O O O O,O O O O O O O O O O O O
+compose a new email but i got a new address this time brandon at example dot com,email,email,email_sendemail,email_sendemail,O O O O O O O O O O O O B-email_address I-email_address I-email_address I-email_address I-email_address,O O O O O O O O O O O O B-person I-email_address I-email_address I-email_address I-email_address
+what is mr. taxi's phone number it is in my contacts,email,email,email_querycontact,email_querycontact,O O B-business_name I-business_name B-personal_info I-personal_info O O O O O,O O B-person I-person B-personal_info I-personal_info O O O O O
+have i received any emails since noon,email,email,email_query,email_query,O O O O O O B-timeofday,O O O O O O B-time
+send an email to grandma saying we are dropping by on saturday see you then,email,email,email_sendemail,email_sendemail,O O O O B-relation O O O O O O O O O O,O O O O B-relation O O O O O O B-date O O O
+please check all new email of income tax department,email,email,email_query,email_query,O O O O O O B-business_name I-business_name I-business_name,O O O O O O B-news_topic I-news_topic I-news_topic
+please find a contact number of jayesh and tell me,email,email,email_querycontact,email_querycontact,O O O O B-personal_info O B-person O O O,O O O O I-personal_info O B-person O O O
+send email to tim at hotmail dot com,email,email,email_sendemail,email_sendemail,O O O B-email_address I-email_address I-email_address I-email_address I-email_address,O O O B-person I-email_address I-email_address I-email_address I-email_address
+search nandy,email,email,email_query,email_querycontact,O O,O O
+are there any new emails received after four o'clock today,email,email,email_query,email_query,O O O O O O B-time I-time O B-date,O O O O O O O I-time I-time B-date
+create an email for my company worker with my recently saved documents,email,email,email_sendemail,email_sendemail,O O O O O B-relation I-relation O O O O O,O O O O O B-relation B-relation O O O O O
+contact detail of paul,email,email,email_querycontact,email_querycontact,B-personal_info I-personal_info O B-person,O O O B-person
+check any mail from amazon,email,email,email_query,email_query,O O O O B-person,O O O O B-business_name
+email form for regional v. p.,email,email,email_sendemail,email_sendemail,O O O B-relation I-relation I-relation,O O O B-business_name I-business_name I-business_name
+any lighting news emails,email,email,email_query,email_query,O O O O,O B-news_topic O O
+my friend john has sent me a invitation card to his newly bought home say thanks to him in his mail id,email,email,email_sendemail,general_quirky,O B-relation B-person O O O O O O O O O O O O O O O O O O O,O O B-person O O O O O O O O O O O O O O O O O O O

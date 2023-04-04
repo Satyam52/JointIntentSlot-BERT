@@ -59,12 +59,12 @@ def main(args):
     slot_idx2word = {v: k for v, k in enumerate(slot_labels)}
 
     # Load Tokenizer & Model
-    tokenizer = BertTokenizer.from_pretrained("bert-base-cased")
+    tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
-    model_config = BertConfig.from_pretrained("bert-base-cased", num_labels=len(
+    model_config = BertConfig.from_pretrained("bert-base-uncased", num_labels=len(
         intent_idx2word), problem_type="single_label_classification", id2label=intent_idx2word, label2id=intent_word2idx)
 
-    model = JointIntentSlot.from_pretrained("bert-base-cased", config=model_config,
+    model = JointIntentSlot.from_pretrained("bert-base-uncased", config=model_config,
                                             num_intent_labels=len(intent_labels), num_slot_labels=len(slot_labels),
                                             ignore_mismatched_sizes=True)
     model.to('cuda')
@@ -148,9 +148,9 @@ def evalFun(path, args):
     slot_idx2word = {v: k for v, k in enumerate(slot_labels)}
 
     # Load Tokenizer & Model
-    tokenizer = BertTokenizer.from_pretrained("bert-base-cased")
+    tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
-    model_config = BertConfig.from_pretrained("bert-base-cased", 
+    model_config = BertConfig.from_pretrained("bert-base-uncased", 
                                 num_labels=len(intent_idx2word), 
                                 problem_type="intent_classification", 
                                 id2label=intent_idx2word, 
@@ -195,8 +195,7 @@ def evalFun(path, args):
 
             # Slot
             slot_logits_size = slot_logits[0].shape[0]
-            slot_logits_mask = np.array(
-                test_dataset[i]['slot_label_ids'][:slot_logits_size]) != -100
+            slot_logits_mask = np.array(test_dataset[i]['slot_label_ids'][:slot_logits_size]) != -100
             slot_logits_clean = slot_logits[0][slot_logits_mask]
             pred_slot_ids.append([slot_idx2word[i.item()]
                                  for i in slot_logits_clean.argmax(dim=1)])
@@ -231,7 +230,7 @@ if __name__ == '__main__':
 
     parser.add_argument('--task', default='massive')
     parser.add_argument('--epoch', default=10)
-    parser.add_argument('--lr', default=5e-3)
+    parser.add_argument('--lr', default=5e-5)
     parser.add_argument('--batch', default=64)
     parser.add_argument('--seed', default=1234)
     parser.add_argument('--best', default=True)

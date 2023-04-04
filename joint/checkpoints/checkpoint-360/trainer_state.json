@@ -1,7 +1,7 @@
 {
-  "best_metric": 1.2876105308532715,
+  "best_metric": 1.0446503162384033,
   "best_model_checkpoint": "checkpoints\\checkpoint-360",
-  "epoch": 1.0,
+  "epoch": 2.0,
   "global_step": 360,
   "is_hyper_param_search": false,
   "is_local_process_zero": true,
@@ -9,16 +9,24 @@
   "log_history": [
     {
       "epoch": 1.0,
-      "eval_loss": 1.2876105308532715,
-      "eval_runtime": 2.1351,
-      "eval_samples_per_second": 950.791,
-      "eval_steps_per_second": 14.988,
+      "eval_loss": 1.9086029529571533,
+      "eval_runtime": 1.564,
+      "eval_samples_per_second": 1297.944,
+      "eval_steps_per_second": 20.46,
+      "step": 180
+    },
+    {
+      "epoch": 2.0,
+      "eval_loss": 1.0446503162384033,
+      "eval_runtime": 1.6557,
+      "eval_samples_per_second": 1226.104,
+      "eval_steps_per_second": 19.328,
       "step": 360
     }
   ],
-  "max_steps": 3600,
-  "num_train_epochs": 10,
-  "total_flos": 295926454800000.0,
+  "max_steps": 1440,
+  "num_train_epochs": 8,
+  "total_flos": 591852909600000.0,
   "trial_name": null,
   "trial_params": null
 }
