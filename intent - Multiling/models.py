@@ -1,4 +1,4 @@
-from transformers import BertModel, RobertaPreTrainedModel
+from transformers import XLMRobertaModel, RobertaPreTrainedModel
 import torch.nn as nn
 
 
@@ -12,7 +12,7 @@ class IntentClassification(RobertaPreTrainedModel):
         self.config = config
 
         # define layers
-        self.xlmroberta = BertModel(config)
+        self.xlmroberta = XLMRobertaModel(config)
         self.dropout = nn.Dropout(classifier_dropout)
         self.intent_classifier = nn.Linear(config.hidden_size, num_intent_labels) 
 
