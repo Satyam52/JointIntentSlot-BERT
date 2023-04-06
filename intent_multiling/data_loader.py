@@ -5,7 +5,7 @@ class LoadDataset:
     @classmethod
     def load_dataset(cls, file_name, slot=False):
         data = []
-        with open(file_name, 'r', encoding='utf-8') as f:
+        with open(file_name, "r", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
                 if slot:

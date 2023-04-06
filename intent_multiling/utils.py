@@ -23,9 +23,7 @@ def seed_all(seed: int = 1004):
 
 def get_intent_acc(preds, labels):
     acc = (preds == labels).mean()
-    return {
-        "intent_acc": acc
-    }
+    return {"intent_acc": acc}
 
 
 def compute_metrics(intent_preds, intent_labels):

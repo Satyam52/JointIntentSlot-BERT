@@ -9,14 +9,12 @@ class TokenizeDataset(torch.utils.data.Dataset):
         self.tokenizer = tokenizer
 
     def align_label(self, seq, intent_label):
-        tokens = self.tokenizer(seq, padding='max_length',
-                                max_length=50, truncation=True)
-        tokens['intent_label_ids'] = [self.intent_word2idx[intent_label]]
+        tokens = self.tokenizer(seq, padding="max_length", max_length=50, truncation=True)
+        tokens["intent_label_ids"] = [self.intent_word2idx[intent_label]]
         return tokens
 
     def __getitem__(self, index):
-        bert_input = self.align_label(
-            self.seqs[index], self.intent_labels[index])
+        bert_input = self.align_label(self.seqs[index], self.intent_labels[index])
         return bert_input
 
     def __len__(self):
