@@ -12,8 +12,9 @@ class IntentClassification(RobertaPreTrainedModel):
         self.config = config
 
         # define layers
-        self.xlmroberta = XLMRobertaModel(config)
+        self.xlmr = XLMRobertaModel(config)
         self.dropout = nn.Dropout(classifier_dropout)
+        self.activation = nn.GELU()
         self.intent_classifier = nn.Linear(config.hidden_size, num_intent_labels) 
 
         # Initialize weights and apply final processing
@@ -23,7 +24,7 @@ class IntentClassification(RobertaPreTrainedModel):
                 position_ids=None, head_mask=None, inputs_embeds=None,
                 intent_label_ids=None, output_attentions=None, output_hidden_states=None):
 
-        outputs = self.xlmroberta(
+        outputs = self.xlmr(
             input_ids=input_ids, attention_mask=attention_mask,
             token_type_ids=token_type_ids, position_ids=position_ids,
             head_mask=head_mask, inputs_embeds=inputs_embeds, output_attentions=output_attentions,
@@ -40,8 +41,7 @@ class IntentClassification(RobertaPreTrainedModel):
         # Intent Softmax
         if intent_label_ids is not None:
             intent_loss_fct = nn.CrossEntropyLoss()
-            intent_loss = intent_loss_fct(
-                intent_logits.view(-1, self.num_intent_labels), intent_label_ids.view(-1))
+            intent_loss = intent_loss_fct(intent_logits.view(-1, self.num_intent_labels), intent_label_ids.view(-1))
             total_loss += intent_loss
 
         outputs = ((intent_logits),) + outputs[2:]
