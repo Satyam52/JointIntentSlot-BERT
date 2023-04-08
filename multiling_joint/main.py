@@ -177,8 +177,8 @@ def evalFun(path, args, lang):
     intent_label_ids = []
     slot_label_ids = []
 
-    with open(f"./data/{TASK}/test/label", "r", encoding="utf-8") as intent_f, open(
-        f"./data/{TASK}/test/seq.out", "r", encoding="utf-8"
+    with open(f"{default_path}/test/label", "r", encoding="utf-8") as intent_f, open(
+        f"{default_path}/test/seq.out", "r", encoding="utf-8"
     ) as slot_f:
         for line in intent_f:
             line = line.strip()
