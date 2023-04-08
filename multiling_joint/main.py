@@ -84,7 +84,7 @@ def main(args):
         config=model_config,
         num_intent_labels=len(intent_labels),
         num_slot_labels=len(slot_labels),
-        # ignore_mismatched_sizes=True,
+        ignore_mismatched_sizes=True,
     )
     model.to(device)
 
@@ -164,11 +164,11 @@ def evalFun(path, args, lang):
         num_labels=len(intent_idx2word),
         problem_type="intent_classification",
         id2label=intent_idx2word,
-        label2id=intent_word2idx,
+        label2id=intent_word2idx,   
     )
 
     model = JointIntentSlot.from_pretrained(
-        path, num_intent_labels=len(intent_labels), num_slot_labels=len(slot_labels)
+        path, num_intent_labels=len(intent_labels), num_slot_labels=len(slot_labels), ignore_mismatched_sizes=True
     )
 
     # Tokenize Datasets
