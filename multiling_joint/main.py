@@ -56,11 +56,11 @@ def main(args):
 
     intent_train = LoadDataset.load_dataset(f"{default_path}/train/label")
     intent_dev = LoadDataset.load_dataset(f"{default_path}/dev/label")
-    intent_labels = LoadDataset.load_dataset(f"{default_path}/intent_label_vocab")
+    intent_labels = LoadDataset.load_dataset(f"data/processed/intent_label_vocab")
 
     slot_train = LoadDataset.load_dataset(f"{default_path}/train/seq.out", slot=True)
     slot_dev = LoadDataset.load_dataset(f"{default_path}/dev/seq.out", slot=True)
-    slot_labels = LoadDataset.load_dataset(f"{default_path}/slot_label_vocab")
+    slot_labels = LoadDataset.load_dataset(f"data/processed/slot_label_vocab")
 
     # Label Indexing
     intent_word2idx = defaultdict(int, {k: v for v, k in enumerate(intent_labels)})
@@ -144,10 +144,10 @@ def evalFun(path, args, lang):
     seq_test = LoadDataset.load_dataset(f"{default_path}/test/seq.in")
 
     intent_test = LoadDataset.load_dataset(f"{default_path}/test/label")
-    intent_labels = LoadDataset.load_dataset(f"{default_path}/intent_label_vocab")
+    intent_labels = LoadDataset.load_dataset(f"data/processed/intent_label_vocab")
 
     slot_test = LoadDataset.load_dataset(f"{default_path}/test/seq.out", slot=True)
-    slot_labels = LoadDataset.load_dataset(f"{default_path}/slot_label_vocab")
+    slot_labels = LoadDataset.load_dataset(f"data/processed/slot_label_vocab")
 
     # Label Indexing
     intent_word2idx = defaultdict(int, {k: v for v, k in enumerate(intent_labels)})
@@ -166,7 +166,7 @@ def evalFun(path, args, lang):
         id2label=intent_idx2word,
         label2id=intent_word2idx,   
     )
-
+    print(len(intent_labels), len(slot_labels))
     model = JointIntentSlot.from_pretrained(
         path, num_intent_labels=len(intent_labels), num_slot_labels=len(slot_labels), ignore_mismatched_sizes=True
     )
@@ -194,10 +194,13 @@ def evalFun(path, args, lang):
         model.to("cpu")
         pred_intent_ids = []
         pred_slot_ids = []
-
-        for i in tqdm.tqdm(range(len(seqs))):
-            input_seq = tokenizer(seqs[i], return_tensors="pt", max_length=50, truncation=True, padding='max_length')
-
+# len(seqs)
+        x = 4
+        for i in tqdm.tqdm(range(0, 100, x)):
+            input_seq = tokenizer(seqs[i:i+x], return_tensors="pt", max_length=50, truncation=True, padding='max_length')
+            print(x.shape)
+            exit()
+            
             model.eval()
             with torch.no_grad():
                 _, (intent_logits, slot_logits) = model(**input_seq)
@@ -214,19 +217,20 @@ def evalFun(path, args, lang):
         return np.array(pred_intent_ids), pred_slot_ids
 
     pred_intent_ids, pred_slot_ids = predict(model, seq_test)
-
     print(f"\n{time.strftime('%c', time.localtime(time.time()))}")
-    res = compute_metrics(pred_intent_ids, intent_label_ids, pred_slot_ids, slot_label_ids)
+    res = compute_metrics(pred_intent_ids, intent_label_ids[:100], pred_slot_ids, slot_label_ids[:100])
     for k, v in res.items():
         print(f"{k:<20}: {v}")
-    os.makedir("results/metrics")
-    with open(f"results/metrics/{LANG}.json", "w", encoding="utf-8") as f:
-        json.dump(res, f)
+    # os.makedirs("results/metrics",exist_ok=True)
+    # with open(f"results/metrics/{LANG}.json", "w", encoding="utf-8") as f:
+    #     json.dump(res, f)
 
     # Save results and outputs
-    with open("result/pred_intent", "w") as f, open("result/pred_slots", "w", newline="") as f2, open(
-        "result/actual_intent", "w"
-    ) as f3, open("result/actual_slots", "w", newline="") as f4, open("result/eval_metric.json", "w") as f5:
+    os.makedirs("result", exist_ok=True)
+    os.makedirs(f'result/{LANG}',exist_ok=True)
+    with open(f"result/{LANG}/pred_intent", "w") as f, open(f"result/{LANG}/pred_slots", "w", newline="") as f2, open(
+        f"result/{LANG}/actual_intent", "w"
+    ) as f3, open(f"result/{LANG}/actual_slots", "w", newline="") as f4, open(f"result/{LANG}/eval_metric.json", "w") as f5:
         csv.writer(f, delimiter="\n").writerow(pred_intent_ids.tolist())
         csv.writer(
             f2,

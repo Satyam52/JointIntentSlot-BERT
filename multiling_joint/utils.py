@@ -29,6 +29,7 @@ def get_intent_acc(preds, labels):
 
 def get_slot_metrics(preds, labels):
     assert len(preds) == len(labels)
+    print(len(preds[0]),len(labels[0]))
     return {
         "slot_precision": precision_score(labels, preds),
         "slot_recall": recall_score(labels, preds),
