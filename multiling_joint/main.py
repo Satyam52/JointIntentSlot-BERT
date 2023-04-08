@@ -196,7 +196,7 @@ def evalFun(path, args, lang):
         pred_slot_ids = []
 
         for i in tqdm.tqdm(range(len(seqs))):
-            input_seq = tokenizer(seqs[i], return_tensors="pt", max_length=50, truncation=True)
+            input_seq = tokenizer(seqs[i], return_tensors="pt", max_length=50, truncation=True, padding='max_length')
 
             model.eval()
             with torch.no_grad():
