@@ -100,7 +100,7 @@ def main(args):
         num_train_epochs=EPOCH,
         learning_rate=LR,
         save_strategy="epoch",
-        save_total_limit=10,
+        save_total_limit=3,
         evaluation_strategy="epoch",
         load_best_model_at_end=BEST,
         report_to="none",
