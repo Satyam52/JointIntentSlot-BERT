@@ -4,6 +4,7 @@ import gc
 import numpy as np
 import torch
 from seqeval.metrics import precision_score, recall_score, f1_score
+from sklearn.utils import check_consistent_length
 
 
 def empty_cuda_cache():
@@ -29,7 +30,8 @@ def get_intent_acc(preds, labels):
 
 def get_slot_metrics(preds, labels):
     assert len(preds) == len(labels)
-    print(len(preds[0]),len(labels[0]))
+    # print(len(preds),len(labels))
+    # print(preds[0],labels[0])
     return {
         "slot_precision": precision_score(labels, preds),
         "slot_recall": recall_score(labels, preds),
@@ -52,7 +54,8 @@ def get_sentence_frame_acc(intent_preds, intent_labels, slot_preds, slot_labels)
 
     sementic_acc = np.multiply(intent_result, slot_result).mean()
     return {
-        "sementic_frame_acc": sementic_acc
+        "sementic_frame_acc": sementic_acc,
+        "exact_match":(intent_result == slot_result).mean()
     }
 
 def compute_metrics(intent_preds, intent_labels, slot_preds, slot_labels):

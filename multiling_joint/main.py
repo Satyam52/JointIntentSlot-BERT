@@ -166,7 +166,7 @@ def evalFun(path, args, lang):
         id2label=intent_idx2word,
         label2id=intent_word2idx,   
     )
-    print(len(intent_labels), len(slot_labels))
+    
     model = JointIntentSlot.from_pretrained(
         path, num_intent_labels=len(intent_labels), num_slot_labels=len(slot_labels), ignore_mismatched_sizes=True
     )
@@ -187,19 +187,19 @@ def evalFun(path, args, lang):
 
         for line in slot_f:
             line = line.strip().split()
+            if len(line) > MAX_TOKEN_LEN:
+                line = line[:50]
             slot_label_ids.append(line)
 
+    # print(slot_label_ids)
     # Predict on test data
     def predict(model, seqs):
         model.to("cpu")
         pred_intent_ids = []
         pred_slot_ids = []
-# len(seqs)
-        x = 4
-        for i in tqdm.tqdm(range(0, 100, x)):
-            input_seq = tokenizer(seqs[i:i+x], return_tensors="pt", max_length=50, truncation=True, padding='max_length')
-            print(x.shape)
-            exit()
+        
+        for i in tqdm.tqdm(range(len(seqs))):
+            input_seq = tokenizer(seqs[i], return_tensors="pt", max_length=50, truncation=True)
             
             model.eval()
             with torch.no_grad():
@@ -214,11 +214,18 @@ def evalFun(path, args, lang):
             slot_logits_clean = slot_logits[0][slot_logits_mask]
             pred_slot_ids.append([slot_idx2word[i.item()] for i in slot_logits_clean.argmax(dim=1)])
 
+            if len(pred_slot_ids[i]) != len(slot_label_ids[i]):
+                print(len(slot_logits_mask))
+                print(i, len(pred_slot_ids[i]), len(slot_label_ids[i]),len(seqs[i].split()), input_seq['input_ids'].shape)
+                exit()
+            
         return np.array(pred_intent_ids), pred_slot_ids
 
     pred_intent_ids, pred_slot_ids = predict(model, seq_test)
+    # print(pred_slot_ids)
+    
     print(f"\n{time.strftime('%c', time.localtime(time.time()))}")
-    res = compute_metrics(pred_intent_ids, intent_label_ids[:100], pred_slot_ids, slot_label_ids[:100])
+    res = compute_metrics(pred_intent_ids, intent_label_ids, pred_slot_ids, slot_label_ids)
     for k, v in res.items():
         print(f"{k:<20}: {v}")
     # os.makedirs("results/metrics",exist_ok=True)
