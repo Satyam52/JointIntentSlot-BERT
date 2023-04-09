@@ -53,9 +53,14 @@ def get_sentence_frame_acc(intent_preds, intent_labels, slot_preds, slot_labels)
     slot_result = np.array(slot_result)
 
     sementic_acc = np.multiply(intent_result, slot_result).mean()
+    # exact_match = 0
+    # for i,j in zip(intent_result, slot_result):
+    #     if i == j == True:
+    #         exact_match +=1
+    # exact_match /= len(intent_result)
     return {
         "sementic_frame_acc": sementic_acc,
-        "exact_match":(intent_result == slot_result).mean()
+        # "exact_match":exact_match
     }
 
 def compute_metrics(intent_preds, intent_labels, slot_preds, slot_labels):

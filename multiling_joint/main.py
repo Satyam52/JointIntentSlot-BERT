@@ -188,7 +188,7 @@ def evalFun(path, args, lang):
         for line in slot_f:
             line = line.strip().split()
             if len(line) > MAX_TOKEN_LEN:
-                line = line[:50]
+                line = line[:MAX_TOKEN_LEN]
             slot_label_ids.append(line)
 
     # print(slot_label_ids)
@@ -199,7 +199,7 @@ def evalFun(path, args, lang):
         pred_slot_ids = []
         
         for i in tqdm.tqdm(range(len(seqs))):
-            input_seq = tokenizer(seqs[i], return_tensors="pt", max_length=50, truncation=True)
+            input_seq = tokenizer(seqs[i], return_tensors="pt", max_length=MAX_TOKEN_LEN, truncation=True)
             
             model.eval()
             with torch.no_grad():
@@ -216,7 +216,7 @@ def evalFun(path, args, lang):
 
             if len(pred_slot_ids[i]) != len(slot_label_ids[i]):
                 print(len(slot_logits_mask))
-                print(i, len(pred_slot_ids[i]), len(slot_label_ids[i]),len(seqs[i].split()), input_seq['input_ids'].shape)
+                print(i, pred_slot_ids[i], len(pred_slot_ids[i]), len(slot_label_ids[i]),len(seqs[i].split()), input_seq['input_ids'])
                 exit()
             
         return np.array(pred_intent_ids), pred_slot_ids
@@ -272,7 +272,7 @@ if __name__ == "__main__":
         os.makedirs("results", exist_ok=True)
         for singlelingual_data in multilingual_data:
             name = singlelingual_data.split(".")[0].replace("-", "_")
-            if ONLY_INDIAN and name not in INDIAN_LANGUAGE:  # IF benchmarking only on INDIAN LANG
+            if (not os.path.isdir(f"data/processed/{name}")) or (name in ['ja_JP', 'zh_CN','zh_TW']) or (ONLY_INDIAN and name not in INDIAN_LANGUAGE):  # IF benchmarking only on INDIAN LANG
                 continue
             evalFun(path=f"checkpoints/{args.task}_ep{args.epoch}/", args=args, lang=name)
     else:  # Only on trained language

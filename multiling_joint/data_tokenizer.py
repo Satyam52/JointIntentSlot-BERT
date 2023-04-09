@@ -1,4 +1,5 @@
 import torch
+from config import *
 
 
 class TokenizeDataset:
@@ -13,15 +14,15 @@ class TokenizeDataset:
         self.tokenizer = tokenizer
         
     def align_label(self, seq, intent_label, slot_label):
-        tokens = self.tokenizer(seq, padding='max_length', max_length=50, truncation=True)
+        tokens = self.tokenizer(seq, padding='max_length', max_length=MAX_TOKEN_LEN, truncation=True)
         
         slot_label_ids = [-100]
         for word_idx, word in enumerate(seq.split()):
             slot_label_ids += [self.slot_word2idx[slot_label[word_idx]]] + [-100]*(len(self.tokenizer.tokenize(word))-1)    # [slot label id] + [subword tails padding]
-        if len(slot_label_ids) >= 50:
+        if len(slot_label_ids) >= MAX_TOKEN_LEN:
             slot_label_ids = slot_label_ids[:49] + [-100]
         else:
-            slot_label_ids += [-100]*(50-len(slot_label_ids))
+            slot_label_ids += [-100]*(MAX_TOKEN_LEN-len(slot_label_ids))
         
         tokens['intent_label_ids'] = [self.intent_word2idx[intent_label]]
         tokens['slot_label_ids'] = slot_label_ids
