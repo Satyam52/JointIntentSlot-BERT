@@ -88,6 +88,8 @@ def main(args):
     )
     model.to(device)
 
+    exit()
+
     # Tokenize Datasets
     train_dataset = TokenizeDataset(seq_train, intent_train, slot_train, intent_word2idx, slot_word2idx, tokenizer)
     dev_dataset = TokenizeDataset(seq_dev, intent_dev, slot_dev, intent_word2idx, slot_word2idx, tokenizer)
@@ -164,9 +166,9 @@ def evalFun(path, args, lang):
         num_labels=len(intent_idx2word),
         problem_type="intent_classification",
         id2label=intent_idx2word,
-        label2id=intent_word2idx,   
+        label2id=intent_word2idx,
     )
-    
+
     model = JointIntentSlot.from_pretrained(
         path, num_intent_labels=len(intent_labels), num_slot_labels=len(slot_labels), ignore_mismatched_sizes=True
     )
@@ -197,10 +199,10 @@ def evalFun(path, args, lang):
         model.to("cpu")
         pred_intent_ids = []
         pred_slot_ids = []
-        
+
         for i in tqdm.tqdm(range(len(seqs))):
             input_seq = tokenizer(seqs[i], return_tensors="pt", max_length=MAX_TOKEN_LEN, truncation=True)
-            
+
             model.eval()
             with torch.no_grad():
                 _, (intent_logits, slot_logits) = model(**input_seq)
@@ -216,14 +218,21 @@ def evalFun(path, args, lang):
 
             if len(pred_slot_ids[i]) != len(slot_label_ids[i]):
                 print(len(slot_logits_mask))
-                print(i, pred_slot_ids[i], len(pred_slot_ids[i]), len(slot_label_ids[i]),len(seqs[i].split()), input_seq['input_ids'])
+                print(
+                    i,
+                    pred_slot_ids[i],
+                    len(pred_slot_ids[i]),
+                    len(slot_label_ids[i]),
+                    len(seqs[i].split()),
+                    input_seq["input_ids"],
+                )
                 exit()
-            
+
         return np.array(pred_intent_ids), pred_slot_ids
 
     pred_intent_ids, pred_slot_ids = predict(model, seq_test)
     # print(pred_slot_ids)
-    
+
     print(f"\n{time.strftime('%c', time.localtime(time.time()))}")
     res = compute_metrics(pred_intent_ids, intent_label_ids, pred_slot_ids, slot_label_ids)
     for k, v in res.items():
@@ -234,15 +243,14 @@ def evalFun(path, args, lang):
 
     # Save results and outputs
     os.makedirs("result", exist_ok=True)
-    os.makedirs(f'result/{LANG}',exist_ok=True)
+    os.makedirs(f"result/{LANG}", exist_ok=True)
     with open(f"result/{LANG}/pred_intent", "w") as f, open(f"result/{LANG}/pred_slots", "w", newline="") as f2, open(
         f"result/{LANG}/actual_intent", "w"
-    ) as f3, open(f"result/{LANG}/actual_slots", "w", newline="") as f4, open(f"result/{LANG}/eval_metric.json", "w") as f5:
+    ) as f3, open(f"result/{LANG}/actual_slots", "w", newline="") as f4, open(
+        f"result/{LANG}/eval_metric.json", "w"
+    ) as f5:
         csv.writer(f, delimiter="\n").writerow(pred_intent_ids.tolist())
-        csv.writer(
-            f2,
-            delimiter=" ",
-        ).writerows(pred_slot_ids)
+        csv.writer(f2, delimiter=" ").writerows(pred_slot_ids)
         csv.writer(f3, delimiter="\n").writerow(intent_label_ids.tolist())
         csv.writer(f4, delimiter=" ").writerows(slot_label_ids)
         json.dump(res, f5)
@@ -272,7 +280,11 @@ if __name__ == "__main__":
         os.makedirs("results", exist_ok=True)
         for singlelingual_data in multilingual_data:
             name = singlelingual_data.split(".")[0].replace("-", "_")
-            if (not os.path.isdir(f"data/processed/{name}")) or (name in ['ja_JP', 'zh_CN','zh_TW']) or (ONLY_INDIAN and name not in INDIAN_LANGUAGE):  # IF benchmarking only on INDIAN LANG
+            if (
+                (not os.path.isdir(f"data/processed/{name}"))
+                or (name in ["ja_JP", "zh_CN", "zh_TW"])
+                or (ONLY_INDIAN and name not in INDIAN_LANGUAGE)
+            ):  # IF benchmarking only on INDIAN LANG
                 continue
             evalFun(path=f"checkpoints/{args.task}_ep{args.epoch}/", args=args, lang=name)
     else:  # Only on trained language

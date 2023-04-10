@@ -100,7 +100,7 @@ class SlotFillingHead(nn.Module):
 
 
 class JointIntentSlot(RobertaPreTrainedModel):
-    def __init__(self, config, num_intent_labels, num_slot_labels):
+    def __init__(self, config, num_intent_labels, num_slot_labels, intent_labels_token, slot_labels_token):
         super().__init__(config)
 
         # store params
@@ -108,6 +108,10 @@ class JointIntentSlot(RobertaPreTrainedModel):
         self.num_intent_labels = num_intent_labels
         self.num_slot_labels = num_slot_labels
         self.config = config
+        self.intent_desc = None
+        self.slot_desc = None
+        self.intent_labels_token = intent_labels_token
+        self.slot_labels_token = slot_labels_token
 
         # define layers
         self.roberta = XLMRobertaModel(config)
@@ -121,6 +125,14 @@ class JointIntentSlot(RobertaPreTrainedModel):
         # Initialize weights and apply final processing
         self.post_init()
 
+    def init_desc(self):
+        if type == "intent":
+            outputs = self.roberta(**self.intent_labels_token)
+            self.intent_desc = outputs[1].detach()
+        elif type == "slot":
+            outputs = self.roberta(**self.slot_labels_token)
+            self.slot_desc = outputs[1].detach()
+
     def forward(
         self,
         input_ids=None,
@@ -133,7 +145,11 @@ class JointIntentSlot(RobertaPreTrainedModel):
         slot_label_ids=None,
         output_attentions=None,
         output_hidden_states=None,
+        eval=False,
     ):
+        if not eval:
+            self.init_desc()
+
         outputs = self.roberta(
             input_ids=input_ids,
             attention_mask=attention_mask,
